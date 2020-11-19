@@ -74,8 +74,8 @@ public class SaveRequest {
                 "Green tea" + "," +
                 "Rozenbottel" + "," +
                 "Jupiler" + "," +
-                "Wijn, Wit" + "," +
-                "Wijn, Rood" + "," +
+                "Wijn - Wit" + "," +
+                "Wijn - Rood" + "," +
                  "\r\n";
                 writer.append(dataToPrint);
             }
