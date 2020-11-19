@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 
 public class PointOfSale extends AppCompatActivity  {
@@ -1188,8 +1189,8 @@ public class PointOfSale extends AppCompatActivity  {
                     String.valueOf(qtyW3) + ","
                     ;
 
-                PrintRequest printRequest = new PrintRequest(data);
-                printRequest.printData();
+                SaveRequest saveRequest = new SaveRequest(data);
+                saveRequest.saveData();
 
                 //PrintSocket printSocket = new PrintSocket();
                 //printSocket.sendToSocket();
@@ -1316,48 +1317,50 @@ public class PointOfSale extends AppCompatActivity  {
         runOnUiThread(new Runnable(){
             public void run() {
 
-        textA1.setText(Integer.toString(qtyA1));
-        textA2.setText(Integer.toString(qtyA2));
-        textA3.setText(Integer.toString(qtyA3));
-        textA4.setText(Integer.toString(qtyA4));
-        textA5.setText(Integer.toString(qtyA5));
-        textA6.setText(Integer.toString(qtyA6));
-        textA7.setText(Integer.toString(qtyA7));
-        textA8.setText(Integer.toString(qtyA8));
-        textI1.setText(Integer.toString(qtyI1));
-        textI2.setText(Integer.toString(qtyI2));
-        textI3.setText(Integer.toString(qtyI3));
-        textI4.setText(Integer.toString(qtyI4));
-        textK1.setText(Integer.toString(qtyK1));
-        textK2.setText(Integer.toString(qtyK2));
-        textK3.setText(Integer.toString(qtyK3));
-        textK4.setText(Integer.toString(qtyK4));
-        textK5.setText(Integer.toString(qtyK5));
-        textK6.setText(Integer.toString(qtyK6));
-        textT1.setText(Integer.toString(qtyT1));
-        textT2.setText(Integer.toString(qtyT2));
-        textT3.setText(Integer.toString(qtyT3));
-        textB1.setText(Integer.toString(qtyB1));
-        textB2.setText(Integer.toString(qtyB2));
-        textB3.setText(Integer.toString(qtyB3));
-        textB4.setText(Integer.toString(qtyB4));
-        textB5.setText(Integer.toString(qtyB5));
-        textB6.setText(Integer.toString(qtyB6));
-        textV1.setText(Integer.toString(qtyV1));
-        textF1.setText(Integer.toString(qtyF1));
-        textF2.setText(Integer.toString(qtyF2));
-        textF3.setText(Integer.toString(qtyF3));
-        textF4.setText(Integer.toString(qtyF4));
-        textF5.setText(Integer.toString(qtyF5));
-        textF6.setText(Integer.toString(qtyF6));
-        textF7.setText(Integer.toString(qtyF7));
-        textF8.setText(Integer.toString(qtyF8));
-        textF9.setText(Integer.toString(qtyF9));
-        textW1.setText(Integer.toString(qtyW1));
-        textW2.setText(Integer.toString(qtyW2));
-        textW3.setText(Integer.toString(qtyW3));
+                textA1.setText(Integer.toString(qtyA1));
+                textA2.setText(Integer.toString(qtyA2));
+                textA3.setText(Integer.toString(qtyA3));
+                textA4.setText(Integer.toString(qtyA4));
+                textA5.setText(Integer.toString(qtyA5));
+                textA6.setText(Integer.toString(qtyA6));
+                textA7.setText(Integer.toString(qtyA7));
+                textA8.setText(Integer.toString(qtyA8));
+                textI1.setText(Integer.toString(qtyI1));
+                textI2.setText(Integer.toString(qtyI2));
+                textI3.setText(Integer.toString(qtyI3));
+                textI4.setText(Integer.toString(qtyI4));
+                textK1.setText(Integer.toString(qtyK1));
+                textK2.setText(Integer.toString(qtyK2));
+                textK3.setText(Integer.toString(qtyK3));
+                textK4.setText(Integer.toString(qtyK4));
+                textK5.setText(Integer.toString(qtyK5));
+                textK6.setText(Integer.toString(qtyK6));
+                textT1.setText(Integer.toString(qtyT1));
+                textT2.setText(Integer.toString(qtyT2));
+                textT3.setText(Integer.toString(qtyT3));
+                textB1.setText(Integer.toString(qtyB1));
+                textB2.setText(Integer.toString(qtyB2));
+                textB3.setText(Integer.toString(qtyB3));
+                textB4.setText(Integer.toString(qtyB4));
+                textB5.setText(Integer.toString(qtyB5));
+                textB6.setText(Integer.toString(qtyB6));
+                textV1.setText(Integer.toString(qtyV1));
+                textF1.setText(Integer.toString(qtyF1));
+                textF2.setText(Integer.toString(qtyF2));
+                textF3.setText(Integer.toString(qtyF3));
+                textF4.setText(Integer.toString(qtyF4));
+                textF5.setText(Integer.toString(qtyF5));
+                textF6.setText(Integer.toString(qtyF6));
+                textF7.setText(Integer.toString(qtyF7));
+                textF8.setText(Integer.toString(qtyF8));
+                textF9.setText(Integer.toString(qtyF9));
+                textW1.setText(Integer.toString(qtyW1));
+                textW2.setText(Integer.toString(qtyW2));
+                textW3.setText(Integer.toString(qtyW3));
 
-        textAmount.setText(String.valueOf(amount.doubleValue()));
+                BigDecimal bdcurrentTotalAmount = amount.setScale(2, RoundingMode.HALF_EVEN);
+                textAmount.setText(bdcurrentTotalAmount.toString());
+
             }
         });
 

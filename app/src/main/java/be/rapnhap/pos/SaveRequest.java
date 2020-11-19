@@ -5,14 +5,14 @@ import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class PrintRequest {
+public class SaveRequest {
     String data;
 
-    public PrintRequest(String data) {
+    public SaveRequest(String data) {
         this.data = data;
     }
 
-    public void printData() {
+    public void saveData() {
         // Write data into file
         String fileDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
         String fileName = fileDate + "_POS.txt";
