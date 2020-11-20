@@ -2,13 +2,18 @@ package be.rapnhap.pos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -150,12 +155,12 @@ public class PointOfSale extends AppCompatActivity  {
         setContentView(R.layout.point_of_sale);
 
         // RUN LONG PROCESS IN SEPARATE FUNCTION
-        runLongProcess();
+        runLongProcess(this);
     }
 
 
         // HERE STARTS THE LOG PROCESS
-        private void runLongProcess() {
+        private void runLongProcess(Context mcontext) {
             mProgressDialog = ProgressDialog.show(this, "Please wait","Long operation starts...", true);
             new Thread() {
                 @Override
@@ -1146,65 +1151,100 @@ public class PointOfSale extends AppCompatActivity  {
         butPrint.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                String data =
-                    String.valueOf(qtyA1) + "," +
-                    String.valueOf(qtyA2) + "," +
-                    String.valueOf(qtyA3) + "," +
-                    String.valueOf(qtyA4) + "," +
-                    String.valueOf(qtyA5) + "," +
-                    String.valueOf(qtyA6) + "," +
-                    String.valueOf(qtyA7) + "," +
-                    String.valueOf(qtyA8) + "," +
-                    String.valueOf(qtyB1) + "," +
-                    String.valueOf(qtyB2) + "," +
-                    String.valueOf(qtyB3) + "," +
-                    String.valueOf(qtyB4) + "," +
-                    String.valueOf(qtyB5) + "," +
-                    String.valueOf(qtyB6) + "," +
-                    String.valueOf(qtyV1) + "," +
-                    String.valueOf(qtyI1) + "," +
-                    String.valueOf(qtyI2) + "," +
-                    String.valueOf(qtyI3) + "," +
-                    String.valueOf(qtyI4) + "," +
-                    String.valueOf(qtyF1) + "," +
-                    String.valueOf(qtyF2) + "," +
-                    String.valueOf(qtyF3) + "," +
-                    String.valueOf(qtyF4) + "," +
-                    String.valueOf(qtyF5) + "," +
-                    String.valueOf(qtyF6) + "," +
-                    String.valueOf(qtyF7) + "," +
-                    String.valueOf(qtyF8) + "," +
-                    String.valueOf(qtyF9) + "," +
-                    String.valueOf(qtyK1) + "," +
-                    String.valueOf(qtyK2) + "," +
-                    String.valueOf(qtyK3) + "," +
-                    String.valueOf(qtyK4) + "," +
-                    String.valueOf(qtyK5) + "," +
-                    String.valueOf(qtyK6) + "," +
-                    String.valueOf(qtyT1) + "," +
-                    String.valueOf(qtyT2) + "," +
-                    String.valueOf(qtyT3) + "," +
-                    String.valueOf(qtyW1) + "," +
-                    String.valueOf(qtyW2) + "," +
-                    String.valueOf(qtyW3) + ","
-                    ;
+                if (amount.doubleValue() != 0) {
+                    String data =
+                            String.valueOf(qtyA1) + "," +
+                                    String.valueOf(qtyA2) + "," +
+                                    String.valueOf(qtyA3) + "," +
+                                    String.valueOf(qtyA4) + "," +
+                                    String.valueOf(qtyA5) + "," +
+                                    String.valueOf(qtyA6) + "," +
+                                    String.valueOf(qtyA7) + "," +
+                                    String.valueOf(qtyA8) + "," +
+                                    String.valueOf(qtyB1) + "," +
+                                    String.valueOf(qtyB2) + "," +
+                                    String.valueOf(qtyB3) + "," +
+                                    String.valueOf(qtyB4) + "," +
+                                    String.valueOf(qtyB5) + "," +
+                                    String.valueOf(qtyB6) + "," +
+                                    String.valueOf(qtyV1) + "," +
+                                    String.valueOf(qtyI1) + "," +
+                                    String.valueOf(qtyI2) + "," +
+                                    String.valueOf(qtyI3) + "," +
+                                    String.valueOf(qtyI4) + "," +
+                                    String.valueOf(qtyF1) + "," +
+                                    String.valueOf(qtyF2) + "," +
+                                    String.valueOf(qtyF3) + "," +
+                                    String.valueOf(qtyF4) + "," +
+                                    String.valueOf(qtyF5) + "," +
+                                    String.valueOf(qtyF6) + "," +
+                                    String.valueOf(qtyF7) + "," +
+                                    String.valueOf(qtyF8) + "," +
+                                    String.valueOf(qtyF9) + "," +
+                                    String.valueOf(qtyK1) + "," +
+                                    String.valueOf(qtyK2) + "," +
+                                    String.valueOf(qtyK3) + "," +
+                                    String.valueOf(qtyK4) + "," +
+                                    String.valueOf(qtyK5) + "," +
+                                    String.valueOf(qtyK6) + "," +
+                                    String.valueOf(qtyT1) + "," +
+                                    String.valueOf(qtyT2) + "," +
+                                    String.valueOf(qtyT3) + "," +
+                                    String.valueOf(qtyW1) + "," +
+                                    String.valueOf(qtyW2) + "," +
+                                    String.valueOf(qtyW3) + "," +
+                                    String.valueOf(amount);
 
-                SaveRequest saveRequest = new SaveRequest(data);
-                saveRequest.saveData();
+                    SaveRequest saveRequest = new SaveRequest(data);
+                    saveRequest.saveData();
 
-                //PrintSocket printSocket = new PrintSocket();
-                //printSocket.sendToSocket();
+                    //PrintSocket printSocket = new PrintSocket();
+                    //printSocket.sendToSocket();
 
-
-                initializeQty();
-                loadData();
+                    // reset the panel to 0
+                    initializeQty();
+                    loadData();
+                } else {
+                    showPrintDialog();
+                }
 
             }
         });
 
-                }
+    }
 
-    // INITIALIZE
+    void showPrintDialog() {
+        LayoutInflater inflater = LayoutInflater.from(mcontext);
+        View view = inflater.inflate(R.layout.alert_dialog, null);
+
+        Button okButton = view.findViewById(R.id.okButton);
+        Button cancelButton = view.findViewById(R.id.cancelButton);
+
+        AlertDialog alertDialog = new AlertDialog.Builder(mcontext)
+                .setView(view)
+                .create();
+
+        okButton.setOnClickListener(new OnClickListener(){
+            private static final String TAG = "TAG_PRINT_DIALOG" ;
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "OnClick: OK");
+                alertDialog.dismiss();
+            }
+        });
+        cancelButton.setOnClickListener(new OnClickListener(){
+            private static final String TAG = "TAG_PRINT_DIALOG" ;
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "OnClick: Cancel");
+            }
+        });
+
+        alertDialog.show();
+    }
+
+
+                // INITIALIZE
     public void initializeQty() {
         runOnUiThread(new Runnable(){
             public void run() {
@@ -1365,6 +1405,8 @@ public class PointOfSale extends AppCompatActivity  {
         });
 
     }
+
+
 
 }
 
