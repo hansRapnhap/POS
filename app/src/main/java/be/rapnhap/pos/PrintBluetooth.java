@@ -250,9 +250,9 @@ public class PrintBluetooth extends AppCompatActivity {
             mmOutputStream.write(PrinterCommands.INIT);
             //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.INIT + ">");
 
-            // TODO print 2 times
+            // print 2 times
             // -------------------------------------------------------------------------------
-            for(int i = 0; i < 1; i++) {
+            for(int i = 0; i < 2; i++) {
 
                 // print Title
                 mmOutputStream.write(PrinterCommands.FONT_DOUBLE);

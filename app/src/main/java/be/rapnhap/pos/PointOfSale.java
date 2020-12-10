@@ -1324,7 +1324,7 @@ public class PointOfSale extends AppCompatActivity  {
                 intentPrint.putExtra("line", line);
                 startActivity(intentPrint);
 
-                // TODO : validate if set to 0 is ok here (data are saved,
+                // REMARK: we set to 0  here (data are saved,
                 //  and parsed in 'line' to enable reprint in separate activity)
                 // reset the panel to 0
                 initializeQty();
