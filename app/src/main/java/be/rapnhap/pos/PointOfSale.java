@@ -1745,8 +1745,8 @@ public class PointOfSale extends AppCompatActivity  {
         priceB4 = BigDecimal.valueOf(3.80); // b Ham
         priceB5 = BigDecimal.valueOf(3.00); // b Appel
         priceB6 = BigDecimal.valueOf(3.00); // b Chocolade
-        priceB7 = BigDecimal.valueOf(3.00); // b Irish
-        priceB8 = BigDecimal.valueOf(3.00); // b Choc Orange
+        priceB7 = BigDecimal.valueOf(3.80); // b Irish
+        priceB8 = BigDecimal.valueOf(3.50); // b Choc Orange
         priceV1 = BigDecimal.valueOf(2.00); // w Vanille
         priceF1 = BigDecimal.valueOf(1.50); // f Cola
         priceF2 = BigDecimal.valueOf(1.50); // f Cola Zero
@@ -1760,7 +1760,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
         priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
         priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
-        priceW4 = BigDecimal.valueOf(2.50); // w Gluewine
+        priceW4 = BigDecimal.valueOf(3.00); // w Gluewine
 
         amount = BigDecimal.valueOf(0);
             }
