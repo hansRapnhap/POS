@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -16,7 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class PointOfSale extends AppCompatActivity  {
@@ -47,6 +53,8 @@ public class PointOfSale extends AppCompatActivity  {
     public int qtyB4 = 0;
     public int qtyB5 = 0;
     public int qtyB6 = 0;
+    public int qtyB7 = 0;
+    public int qtyB8 = 0;
     public int qtyV1 = 0;
     public int qtyF1 = 0;
     public int qtyF2 = 0;
@@ -60,6 +68,7 @@ public class PointOfSale extends AppCompatActivity  {
     public int qtyW1 = 0;
     public int qtyW2 = 0;
     public int qtyW3 = 0;
+    public int qtyW4 = 0;
 
     public BigDecimal priceA1;
     public BigDecimal priceA2;
@@ -88,6 +97,8 @@ public class PointOfSale extends AppCompatActivity  {
     public BigDecimal priceB4;
     public BigDecimal priceB5;
     public BigDecimal priceB6;
+    public BigDecimal priceB7;
+    public BigDecimal priceB8;
     public BigDecimal priceV1;
     public BigDecimal priceF1;
     public BigDecimal priceF2;
@@ -101,6 +112,7 @@ public class PointOfSale extends AppCompatActivity  {
     public BigDecimal priceW1;
     public BigDecimal priceW2;
     public BigDecimal priceW3;
+    public BigDecimal priceW4;
 
     public BigDecimal amount;
 
@@ -131,6 +143,8 @@ public class PointOfSale extends AppCompatActivity  {
     public TextView textB4;
     public TextView textB5;
     public TextView textB6;
+    public TextView textB7;
+    public TextView textB8;
     public TextView textV1;
     public TextView textF1;
     public TextView textF2;
@@ -144,8 +158,61 @@ public class PointOfSale extends AppCompatActivity  {
     public TextView textW1;
     public TextView textW2;
     public TextView textW3;
+    public TextView textW4;
+
+    public String labelA1 = "A bieslook";
+    public String labelA2 = "A rozemarijn ";
+    public String labelA3 = "A gorgonzola";
+    public String labelA4 = "A olijven";
+    public String labelA5 = "A gerookte ham";
+    public String labelA6 = "A chorizzo";
+    public String labelA7 = "A kippengehakt";
+    public String labelA8 = "A gerookte zalm";
+    public String labelB1 = "B champignons";
+    public String labelB2 = "B courgette";
+    public String labelB3 = "B gehakt";
+    public String labelB4 = "B gerookte ham";
+    public String labelB5 = "B appel";
+    public String labelB6 = "B chocolade";
+    public String labelB7 = "Irish";
+    public String labelB8 = "Choc Or";
+    public String labelV1 = "Vanille";
+    public String labelI1 = "Big Chocolate";
+    public String labelI2 = "Cornet d'amour";
+    public String labelI3 = "Maxi vanille";
+    public String labelI4 = "Satelite";
+    public String labelF1 = "Coca-Cola";
+    public String labelF2 = "Cola zero";
+    public String labelF3 = "Ice - Tea";
+    public String labelF4 = "Fanta";
+    public String labelF5 = "Appelsap";
+    public String labelF6 = "Sinaas sap";
+    public String labelF7 = "Cecemel";
+    public String labelF8 = "Plat water";
+    public String labelF9 = "Spuitwater";
+    public String labelK1 = "Expresso";
+    public String labelK2 = "Expresso melk";
+    public String labelK3 = "Lungo";
+    public String labelK4 = "Lungo melk";
+    public String labelK5 = "Deca";
+    public String labelK6 = "Deca melk";
+    public String labelT1 = "Yellow label";
+    public String labelT2 = "Green tea";
+    public String labelT3 = "Rozenbottel";
+    public String labelW1 = "Jupiler";
+    public String labelW2 = "Wijn, Wit";
+    public String labelW3 = "Wijn, Rood";
+    public String labelW4 = "Gluewine";
+    public String labelD1 = "Pannacotta";
+    public String labelD2 = "Chocolademousse";
+
+    public String line = "";
+
+    public int sequenceNumber;
 
     public TextView textAmount;
+
+    public boolean printBusy = true;
 
     protected ProgressDialog mProgressDialog;
 
@@ -153,6 +220,11 @@ public class PointOfSale extends AppCompatActivity  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.point_of_sale);
+
+        String seqHhmm = new SimpleDateFormat("HHmm").format(Calendar.getInstance().getTime());
+        int i = Integer. parseInt(seqHhmm);
+        sequenceNumber = i * 10000;
+        printBusy = false;
 
         // RUN LONG PROCESS IN SEPARATE FUNCTION
         runLongProcess(this);
@@ -194,6 +266,8 @@ public class PointOfSale extends AppCompatActivity  {
         textB4 = findViewById(R.id.textB4);
         textB5 = findViewById(R.id.textB5);
         textB6 = findViewById(R.id.textB6);
+        textB7 = findViewById(R.id.textB7);
+        textB8 = findViewById(R.id.textB8);
         textV1 = findViewById(R.id.textV1);
         textF1 = findViewById(R.id.textF1);
         textF2 = findViewById(R.id.textF2);
@@ -207,6 +281,7 @@ public class PointOfSale extends AppCompatActivity  {
         textW1 = findViewById(R.id.textW1);
         textW2 = findViewById(R.id.textW2);
         textW3 = findViewById(R.id.textW3);
+        textW4 = findViewById(R.id.textW4);
 
         textAmount = findViewById(R.id.textAmount);
 
@@ -237,6 +312,8 @@ public class PointOfSale extends AppCompatActivity  {
         Button butB4 = (Button) findViewById(R.id.butB4);
         Button butB5 = (Button) findViewById(R.id.butB5);
         Button butB6 = (Button) findViewById(R.id.butB6);
+        Button butB7 = (Button) findViewById(R.id.butB7);
+        Button butB8 = (Button) findViewById(R.id.butB8);
         Button butV1 = (Button) findViewById(R.id.butV1);
         Button butF1 = (Button) findViewById(R.id.butF1);
         Button butF2 = (Button) findViewById(R.id.butF2);
@@ -250,6 +327,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butW1 = (Button) findViewById(R.id.butW1);
         Button butW2 = (Button) findViewById(R.id.butW2);
         Button butW3 = (Button) findViewById(R.id.butW3);
+        Button butW4 = (Button) findViewById(R.id.butW4);
 
         Button butMinA1 = (Button) findViewById(R.id.butminA1);
         Button butMinA2 = (Button) findViewById(R.id.butminA2);
@@ -278,6 +356,8 @@ public class PointOfSale extends AppCompatActivity  {
         Button butMinB4 = (Button) findViewById(R.id.butminB4);
         Button butMinB5 = (Button) findViewById(R.id.butminB5);
         Button butMinB6 = (Button) findViewById(R.id.butminB6);
+        Button butMinB7 = (Button) findViewById(R.id.butminB7);
+        Button butMinB8 = (Button) findViewById(R.id.butminB8);
         Button butMinV1 = (Button) findViewById(R.id.butminV1);
         Button butMinF1 = (Button) findViewById(R.id.butminF1);
         Button butMinF2 = (Button) findViewById(R.id.butminF2);
@@ -291,6 +371,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butMinW1 = (Button) findViewById(R.id.butminW1);
         Button butMinW2 = (Button) findViewById(R.id.butminW2);
         Button butMinW3 = (Button) findViewById(R.id.butminW3);
+        Button butMinW4 = (Button) findViewById(R.id.butminW4);
 
         // INITIALIZE --------------------------------------------------------------------
         initializeQty();
@@ -863,6 +944,49 @@ public class PointOfSale extends AppCompatActivity  {
             }
         });
 
+        // B7
+        butB7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyB7 = qtyB7 + 1;
+                amount = amount.add(priceB7);
+                loadData();
+            }
+        });
+
+        butMinB7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyB7 > 0) {
+                    qtyB7 = qtyB7 - 1;
+                    amount = amount.subtract(priceB7);
+                    loadData();
+                }
+            }
+        });
+
+        // B8
+        butB8.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyB8 = qtyB8 + 1;
+                amount = amount.add(priceB8);
+                loadData();
+            }
+        });
+
+        butMinB8.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyB8 > 0) {
+                    qtyB8 = qtyB8 - 1;
+                    amount = amount.subtract(priceB8);
+                    loadData();
+                }
+            }
+        });
+
+
         // V1
         butV1.setOnClickListener(new OnClickListener() {
             @Override
@@ -884,256 +1008,277 @@ public class PointOfSale extends AppCompatActivity  {
             }
         });
 
-                    // F1
-                    butF1.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF1 = qtyF1 + 1;
-                            amount = amount.add(priceF1);
-                            loadData();
-                        }
-                    });
+        // F1
+        butF1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF1 = qtyF1 + 1;
+                amount = amount.add(priceF1);
+                loadData();
+            }
+        });
 
-                    butMinF1.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF1 > 0) {
-                                qtyF1 = qtyF1 - 1;
-                                amount = amount.subtract(priceF1);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF1 > 0) {
+                    qtyF1 = qtyF1 - 1;
+                    amount = amount.subtract(priceF1);
+                    loadData();
+                }
+            }
+        });
 
-                    // F2
-                    butF2.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF2 = qtyF2 + 1;
-                            amount = amount.add(priceF2);
-                            loadData();
-                        }
-                    });
+        // F2
+        butF2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF2 = qtyF2 + 1;
+                amount = amount.add(priceF2);
+                loadData();
+            }
+        });
 
-                    butMinF2.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF2 > 0) {
-                                qtyF2 = qtyF2 - 1;
-                                amount = amount.subtract(priceF2);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF2 > 0) {
+                    qtyF2 = qtyF2 - 1;
+                    amount = amount.subtract(priceF2);
+                    loadData();
+                }
+            }
+        });
 
-                    // F3
-                    butF3.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF3 = qtyF3 + 1;
-                            amount = amount.add(priceF3);
-                            loadData();
-                        }
-                    });
+        // F3
+        butF3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF3 = qtyF3 + 1;
+                amount = amount.add(priceF3);
+                loadData();
+            }
+        });
 
-                    butMinF3.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF3 > 0) {
-                                qtyF3 = qtyF3 - 1;
-                                amount = amount.subtract(priceF3);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF3 > 0) {
+                    qtyF3 = qtyF3 - 1;
+                    amount = amount.subtract(priceF3);
+                    loadData();
+                }
+            }
+        });
 
-                    // F4
-                    butF4.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF4 = qtyF4 + 1;
-                            amount = amount.add(priceF4);
-                            loadData();
-                        }
-                    });
+        // F4
+        butF4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF4 = qtyF4 + 1;
+                amount = amount.add(priceF4);
+                loadData();
+            }
+        });
 
-                    butMinF4.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF4 > 0) {
-                                qtyF4 = qtyF4 - 1;
-                                amount = amount.subtract(priceF4);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF4 > 0) {
+                    qtyF4 = qtyF4 - 1;
+                    amount = amount.subtract(priceF4);
+                    loadData();
+                }
+            }
+        });
 
-                    // F5
-                    butF5.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF5 = qtyF5 + 1;
-                            amount = amount.add(priceF5);
-                            loadData();
-                        }
-                    });
+        // F5
+        butF5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF5 = qtyF5 + 1;
+                amount = amount.add(priceF5);
+                loadData();
+            }
+        });
 
-                    butMinF5.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF5 > 0) {
-                                qtyF5 = qtyF5 - 1;
-                                amount = amount.subtract(priceF5);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF5 > 0) {
+                    qtyF5 = qtyF5 - 1;
+                    amount = amount.subtract(priceF5);
+                    loadData();
+                }
+            }
+        });
 
-                    // F6
-                    butF6.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF6 = qtyF6 + 1;
-                            amount = amount.add(priceF6);
-                            loadData();
-                        }
-                    });
+        // F6
+        butF6.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF6 = qtyF6 + 1;
+                amount = amount.add(priceF6);
+                loadData();
+            }
+        });
 
-                    butMinF6.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF6 > 0) {
-                                qtyF6 = qtyF6 - 1;
-                                amount = amount.subtract(priceF6);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF6.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF6 > 0) {
+                    qtyF6 = qtyF6 - 1;
+                    amount = amount.subtract(priceF6);
+                    loadData();
+                }
+            }
+        });
 
-                    // F7
-                    butF7.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF7 = qtyF7 + 1;
-                            amount = amount.add(priceF7);
-                            loadData();
-                        }
-                    });
+        // F7
+        butF7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF7 = qtyF7 + 1;
+                amount = amount.add(priceF7);
+                loadData();
+            }
+        });
 
-                    butMinF7.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF7 > 0) {
-                                qtyF7 = qtyF7 - 1;
-                                amount = amount.subtract(priceF7);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF7 > 0) {
+                    qtyF7 = qtyF7 - 1;
+                    amount = amount.subtract(priceF7);
+                    loadData();
+                }
+            }
+        });
 
-                    // F8
-                    butF8.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF8 = qtyF8 + 1;
-                            amount = amount.add(priceF8);
-                            loadData();
-                        }
-                    });
+        // F8
+        butF8.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF8 = qtyF8 + 1;
+                amount = amount.add(priceF8);
+                loadData();
+            }
+        });
 
-                    butMinF8.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF8 > 0) {
-                                qtyF8 = qtyF8 - 1;
-                                amount = amount.subtract(priceF8);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF8.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF8 > 0) {
+                    qtyF8 = qtyF8 - 1;
+                    amount = amount.subtract(priceF8);
+                    loadData();
+                }
+            }
+        });
 
-                    // F9
-                    butF9.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyF9 = qtyF9 + 1;
-                            amount = amount.add(priceF9);
-                            loadData();
-                        }
-                    });
+        // F9
+        butF9.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyF9 = qtyF9 + 1;
+                amount = amount.add(priceF9);
+                loadData();
+            }
+        });
 
-                    butMinF9.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyF9 > 0) {
-                                qtyF9 = qtyF9 - 1;
-                                amount = amount.subtract(priceF9);
-                                loadData();
-                            }
-                        }
-                    });
+        butMinF9.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyF9 > 0) {
+                    qtyF9 = qtyF9 - 1;
+                    amount = amount.subtract(priceF9);
+                    loadData();
+                }
+            }
+        });
 
-                    // W1
-                    butW1.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyW1 = qtyW1 + 1;
-                            amount = amount.add(priceW1);
-                            loadData();
-                        }
-                    });
+        // W1
+        butW1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyW1 = qtyW1 + 1;
+                amount = amount.add(priceW1);
+                loadData();
+            }
+        });
 
-                    butMinW1.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyW1 > 0) {
-                                qtyW1 = qtyW1 - 1;
-                                amount = amount.subtract(priceW1);
-                                loadData();
-                            }
-                        }
-                    });
-                    // W2
-                    butW2.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyW2 = qtyW2 + 1;
-                            amount = amount.add(priceW2);
-                            loadData();
-                        }
-                    });
+        butMinW1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyW1 > 0) {
+                    qtyW1 = qtyW1 - 1;
+                    amount = amount.subtract(priceW1);
+                    loadData();
+                }
+            }
+        });
+        // W2
+        butW2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyW2 = qtyW2 + 1;
+                amount = amount.add(priceW2);
+                loadData();
+            }
+        });
 
-                    butMinW2.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyW2 > 0) {
-                                qtyW2 = qtyW2 - 1;
-                                amount = amount.subtract(priceW2);
-                                loadData();
-                            }
-                        }
-                    });
-                    // W3
-                    butW3.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            qtyW3 = qtyW3 + 1;
-                            amount = amount.add(priceW3);
-                            loadData();
-                        }
-                    });
+        butMinW2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyW2 > 0) {
+                    qtyW2 = qtyW2 - 1;
+                    amount = amount.subtract(priceW2);
+                    loadData();
+                }
+            }
+        });
 
-                    butMinW3.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (qtyW3 > 0) {
-                                qtyW3 = qtyW3 - 1;
-                                amount = amount.subtract(priceW3);
-                                loadData();
-                            }
-                        }
-                    });
+        // W3
+        butW3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyW3 = qtyW3 + 1;
+                amount = amount.add(priceW3);
+                loadData();
+            }
+        });
 
+        butMinW3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyW3 > 0) {
+                    qtyW3 = qtyW3 - 1;
+                    amount = amount.subtract(priceW3);
+                    loadData();
+                }
+            }
+        });
+
+        // W4
+        butW4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyW4 = qtyW4 + 1;
+                amount = amount.add(priceW4);
+                loadData();
+            }
+        });
+
+        butMinW4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyW4 > 0) {
+                    qtyW4 = qtyW4 - 1;
+                    amount = amount.subtract(priceW4);
+                    loadData();
+                }
+            }
+        });
 
 
         // Reset
@@ -1146,105 +1291,385 @@ public class PointOfSale extends AppCompatActivity  {
             }
         });
 
+
         // Print
         Button butPrint = (Button) findViewById(R.id.butPrint);
         butPrint.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                // save the data
+                String data = parseSaveData();
+                SaveRequest saveRequest = new SaveRequest(data);
+                saveRequest.saveData();
+
+                // decide print action
+                Boolean printIsNeeded;
+                String sequence;
                 if (amount.doubleValue() != 0) {
-                    String data =
-                            String.valueOf(qtyA1) + "," +
-                                    String.valueOf(qtyA2) + "," +
-                                    String.valueOf(qtyA3) + "," +
-                                    String.valueOf(qtyA4) + "," +
-                                    String.valueOf(qtyA5) + "," +
-                                    String.valueOf(qtyA6) + "," +
-                                    String.valueOf(qtyA7) + "," +
-                                    String.valueOf(qtyA8) + "," +
-                                    String.valueOf(qtyB1) + "," +
-                                    String.valueOf(qtyB2) + "," +
-                                    String.valueOf(qtyB3) + "," +
-                                    String.valueOf(qtyB4) + "," +
-                                    String.valueOf(qtyB5) + "," +
-                                    String.valueOf(qtyB6) + "," +
-                                    String.valueOf(qtyV1) + "," +
-                                    String.valueOf(qtyI1) + "," +
-                                    String.valueOf(qtyI2) + "," +
-                                    String.valueOf(qtyI3) + "," +
-                                    String.valueOf(qtyI4) + "," +
-                                    String.valueOf(qtyF1) + "," +
-                                    String.valueOf(qtyF2) + "," +
-                                    String.valueOf(qtyF3) + "," +
-                                    String.valueOf(qtyF4) + "," +
-                                    String.valueOf(qtyF5) + "," +
-                                    String.valueOf(qtyF6) + "," +
-                                    String.valueOf(qtyF7) + "," +
-                                    String.valueOf(qtyF8) + "," +
-                                    String.valueOf(qtyF9) + "," +
-                                    String.valueOf(qtyK1) + "," +
-                                    String.valueOf(qtyK2) + "," +
-                                    String.valueOf(qtyK3) + "," +
-                                    String.valueOf(qtyK4) + "," +
-                                    String.valueOf(qtyK5) + "," +
-                                    String.valueOf(qtyK6) + "," +
-                                    String.valueOf(qtyT1) + "," +
-                                    String.valueOf(qtyT2) + "," +
-                                    String.valueOf(qtyT3) + "," +
-                                    String.valueOf(qtyW1) + "," +
-                                    String.valueOf(qtyW2) + "," +
-                                    String.valueOf(qtyW3) + "," +
-                                    String.valueOf(amount);
-
-                    SaveRequest saveRequest = new SaveRequest(data);
-                    saveRequest.saveData();
-
-                    //PrintSocket printSocket = new PrintSocket();
-                    //printSocket.sendToSocket();
-
-                    // reset the panel to 0
-                    initializeQty();
-                    loadData();
+                    printIsNeeded = true;
+                    sequence = String.format("%8d", sequenceNumber);
+                    // build the 'line' to print
+                    line = parsePrintLines();
                 } else {
-                    showPrintDialog();
+                    printIsNeeded = false;
+                    sequence = "";
+                    line = "Er is niets te printen !";
                 }
 
+
+                // print in separate activity to avoid multiple click of button (occurred using showDialog)
+                Intent intentPrint = new Intent(PointOfSale.this,PrintDialog.class);
+                intentPrint.putExtra("printIsNeeded", printIsNeeded);
+                intentPrint.putExtra("sequence", sequence);
+                intentPrint.putExtra("line", line);
+                startActivity(intentPrint);
+
+                // TODO : validate if set to 0 is ok here (data are saved,
+                //  and parsed in 'line' to enable reprint in separate activity)
+                // reset the panel to 0
+                initializeQty();
+                loadData();
+
             }
         });
 
     }
 
-    void showPrintDialog() {
-        LayoutInflater inflater = LayoutInflater.from(mcontext);
-        View view = inflater.inflate(R.layout.alert_dialog, null);
+    String parsePrintLines()  {
+        // helper field for line amount (only calculated on the printout)
+        BigDecimal amountLine;
+        // String.format("%5.2f", amountLine) returns ' 0.01' (5 positions, 2 leading , decimal sign, 2 decimals)
 
-        Button okButton = view.findViewById(R.id.okButton);
-        Button cancelButton = view.findViewById(R.id.cancelButton);
+        String line = "";
+        if (qtyA1 > 0) {
+            line += String.format("%1$2s", qtyA1) + " ";
+            line += String.format("%-15s", labelA1) + " ";
+            amountLine = BigDecimal.valueOf(qtyA1).multiply(priceA1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA2 > 0) {
+            line += String.format("%1$2s", qtyA2) + " ";
+            line += String.format("%-15s", labelA2) + " ";
+            amountLine = BigDecimal.valueOf(qtyA2).multiply(priceA2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA3 > 0) {
+            line += String.format("%1$2s", qtyA3) + " ";
+            line += String.format("%-15s", labelA3) + " ";
+            amountLine = BigDecimal.valueOf(qtyA3).multiply(priceA3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA4 > 0) {
+            line += String.format("%1$2s", qtyA4) + " ";
+            line += String.format("%-15s", labelA4) + " ";
+            amountLine = BigDecimal.valueOf(qtyA4).multiply(priceA4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA5 > 0) {
+            line += String.format("%1$2s", qtyA5) + " ";
+            line += String.format("%-15s", labelA5) + " ";
+            amountLine = BigDecimal.valueOf(qtyA5).multiply(priceA5);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA6 > 0) {
+            line += String.format("%1$2s", qtyA6) + " ";
+            line += String.format("%-15s", labelA6) + " ";
+            amountLine = BigDecimal.valueOf(qtyA6).multiply(priceA6);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA7 > 0) {
+            line += String.format("%1$2s", qtyA7) + " ";
+            line += String.format("%-15s", labelA7) + " ";
+            amountLine = BigDecimal.valueOf(qtyA7).multiply(priceA7);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyA8 > 0) {
+            line += String.format("%1$2s", qtyA8) + " ";
+            line += String.format("%-15s", labelA8) + " ";
+            amountLine = BigDecimal.valueOf(qtyA8).multiply(priceA8);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB1 > 0) {
+            line += String.format("%1$2s", qtyB1) + " ";
+            line += String.format("%-15s", labelB1) + " ";
+            amountLine = BigDecimal.valueOf(qtyB1).multiply(priceB1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB2 > 0) {
+            line += String.format("%1$2s", qtyB2) + " ";
+            line += String.format("%-15s", labelB2) + " ";
+            amountLine = BigDecimal.valueOf(qtyB2).multiply(priceB2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB3 > 0) {
+            line += String.format("%1$2s", qtyB3) + " ";
+            line += String.format("%-15s", labelB3) + " ";
+            amountLine = BigDecimal.valueOf(qtyB3).multiply(priceB3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB4 > 0) {
+            line += String.format("%1$2s", qtyB4) + " ";
+            line += String.format("%-15s", labelB4) + " ";
+            amountLine = BigDecimal.valueOf(qtyB4).multiply(priceB4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB5 > 0) {
+            line += String.format("%1$2s", qtyB5) + " ";
+            line += String.format("%-15s", labelB5) + " ";
+            amountLine = BigDecimal.valueOf(qtyB5).multiply(priceB5);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB6 > 0) {
+            line += String.format("%1$2s", qtyB6) + " ";
+            line += String.format("%-15s", labelB6) + " ";
+            amountLine = BigDecimal.valueOf(qtyB6).multiply(priceB6);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB7 > 0) {
+            line += String.format("%1$2s", qtyB7) + " ";
+            line += String.format("%-15s", labelB7) + " ";
+            amountLine = BigDecimal.valueOf(qtyB7).multiply(priceB7);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyB8 > 0) {
+            line += String.format("%1$2s", qtyB8) + " ";
+            line += String.format("%-15s", labelB8) + " ";
+            amountLine = BigDecimal.valueOf(qtyB8).multiply(priceB8);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyV1 > 0) {
+            line += String.format("%1$2s", qtyV1) + " ";
+            line += String.format("%-15s", labelV1) + " ";
+            amountLine = BigDecimal.valueOf(qtyV1).multiply(priceV1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI1 > 0) {
+            line += String.format("%1$2s", qtyI1) + " ";
+            line += String.format("%-15s", labelI1) + " ";
+            amountLine = BigDecimal.valueOf(qtyI1).multiply(priceI1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI2 > 0) {
+            line += String.format("%1$2s", qtyI2) + " ";
+            line += String.format("%-15s", labelI2) + " ";
+            amountLine = BigDecimal.valueOf(qtyI2).multiply(priceI2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI3 > 0) {
+            line += String.format("%1$2s", qtyI3) + " ";
+            line += String.format("%-15s", labelI3) + " ";
+            amountLine = BigDecimal.valueOf(qtyI3).multiply(priceI3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI4 > 0) {
+            line += String.format("%1$2s", qtyI4) + " ";
+            line += String.format("%-15s", labelI4) + " ";
+            amountLine = BigDecimal.valueOf(qtyI4).multiply(priceI4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK1 > 0) {
+            line += String.format("%1$2s", qtyK1) + " ";
+            line += String.format("%-15s", labelK1) + " ";
+            amountLine = BigDecimal.valueOf(qtyK1).multiply(priceK1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK2 > 0) {
+            line += String.format("%1$2s", qtyK2) + " ";
+            line += String.format("%-15s", labelK2) + " ";
+            amountLine = BigDecimal.valueOf(qtyK2).multiply(priceK2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK3 > 0) {
+            line += String.format("%1$2s", qtyK3) + " ";
+            line += String.format("%-15s", labelK3) + " ";
+            amountLine = BigDecimal.valueOf(qtyK3).multiply(priceK3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK4 > 0) {
+            line += String.format("%1$2s", qtyK4) + " ";
+            line += String.format("%-15s", labelK4) + " ";
+            amountLine = BigDecimal.valueOf(qtyK4).multiply(priceK4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK5 > 0) {
+            line += String.format("%1$2s", qtyK5) + " ";
+            line += String.format("%-15s", labelK5) + " ";
+            amountLine = BigDecimal.valueOf(qtyK5).multiply(priceK5);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyK6 > 0) {
+            line += String.format("%1$2s", qtyK6) + " ";
+            line += String.format("%-15s", labelK6) + " ";
+            amountLine = BigDecimal.valueOf(qtyK6).multiply(priceK6);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyT1 > 0) {
+            line += String.format("%1$2s", qtyT1) + " ";
+            line += String.format("%-15s", labelT1) + " ";
+            amountLine = BigDecimal.valueOf(qtyT1).multiply(priceT1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyT2 > 0) {
+            line += String.format("%1$2s", qtyT2) + " ";
+            line += String.format("%-15s", labelT2) + " ";
+            amountLine = BigDecimal.valueOf(qtyT2).multiply(priceT2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyT3 > 0) {
+            line += String.format("%1$2s", qtyT3) + " ";
+            line += String.format("%-15s", labelT3) + " ";
+            amountLine = BigDecimal.valueOf(qtyT3).multiply(priceT3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF1 > 0) {
+            line += String.format("%1$2s", qtyF1) + " ";
+            line += String.format("%-15s", labelF1) + " ";
+            amountLine = BigDecimal.valueOf(qtyF1).multiply(priceF1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF2 > 0) {
+            line += String.format("%1$2s", qtyF2) + " ";
+            line += String.format("%-15s", labelF2) + " ";
+            amountLine = BigDecimal.valueOf(qtyF2).multiply(priceF2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF3 > 0) {
+            line += String.format("%1$2s", qtyF3) + " ";
+            line += String.format("%-15s", labelF3) + " ";
+            amountLine = BigDecimal.valueOf(qtyF3).multiply(priceF3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF4 > 0) {
+            line += String.format("%1$2s", qtyF4) + " ";
+            line += String.format("%-15s", labelF4) + " ";
+            amountLine = BigDecimal.valueOf(qtyF4).multiply(priceF4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF5 > 0) {
+            line += String.format("%1$2s", qtyF5) + " ";
+            line += String.format("%-15s", labelF5) + " ";
+            amountLine = BigDecimal.valueOf(qtyF5).multiply(priceF5);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF6 > 0) {
+            line += String.format("%1$2s", qtyF6) + " ";
+            line += String.format("%-15s", labelF6) + " ";
+            amountLine = BigDecimal.valueOf(qtyF6).multiply(priceF6);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF7 > 0) {
+            line += String.format("%1$2s", qtyF7) + " ";
+            line += String.format("%-15s", labelF7) + " ";
+            amountLine = BigDecimal.valueOf(qtyF7).multiply(priceF7);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF8 > 0) {
+            line += String.format("%1$2s", qtyF8) + " ";
+            line += String.format("%-15s", labelF8) + " ";
+            amountLine = BigDecimal.valueOf(qtyF8).multiply(priceF8);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyF9 > 0) {
+            line += String.format("%1$2s", qtyF9) + " ";
+            line += String.format("%-15s", labelF9) + " ";
+            amountLine = BigDecimal.valueOf(qtyF9).multiply(priceF9);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyW1 > 0) {
+            line += String.format("%1$2s", qtyW1) + " ";
+            line += String.format("%-15s", labelW1) + " ";
+            amountLine = BigDecimal.valueOf(qtyW1).multiply(priceW1);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyW2 > 0) {
+            line += String.format("%1$2s", qtyW2) + " ";
+            line += String.format("%-15s", labelW2) + " ";
+            amountLine = BigDecimal.valueOf(qtyW2).multiply(priceW2);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyW3 > 0) {
+            line += String.format("%1$2s", qtyW3) + " ";
+            line += String.format("%-15s", labelW3) + " ";
+            amountLine = BigDecimal.valueOf(qtyW3).multiply(priceW3);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyW4 > 0) {
+            line += String.format("%1$2s", qtyW4) + " ";
+            line += String.format("%-15s", labelW4) + " ";
+            amountLine = BigDecimal.valueOf(qtyW4).multiply(priceW4);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
 
-        AlertDialog alertDialog = new AlertDialog.Builder(mcontext)
-                .setView(view)
-                .create();
+        // print the total amount
+        line += "                --------\n";
+        line += "   TOTAAL        ";
+        line += String.format("%7.2f", amount) + "\n";
 
-        okButton.setOnClickListener(new OnClickListener(){
-            private static final String TAG = "TAG_PRINT_DIALOG" ;
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "OnClick: OK");
-                alertDialog.dismiss();
-            }
-        });
-        cancelButton.setOnClickListener(new OnClickListener(){
-            private static final String TAG = "TAG_PRINT_DIALOG" ;
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "OnClick: Cancel");
-            }
-        });
-
-        alertDialog.show();
+        return line;
     }
 
 
-                // INITIALIZE
+    String parseSaveData() {
+
+        //Convert the total amount to a BigInteger, to avoid csv errors with decimal sign
+        //--------------------------------------------------------------------------------
+        BigDecimal amount100 = new BigDecimal(0);                 // helper variable
+        amount100 = amount.scaleByPowerOfTen(2);                      // multiply with 100
+        amount100.setScale(0,RoundingMode.HALF_UP);          // round to 0 decimals
+        BigInteger amountInteger100 = amount100.toBigInteger();       // convert to integer
+
+        sequenceNumber += 1;
+
+        String data =
+                String.valueOf(qtyA1) + "," +
+                        String.valueOf(qtyA2) + "," +
+                        String.valueOf(qtyA3) + "," +
+                        String.valueOf(qtyA4) + "," +
+                        String.valueOf(qtyA5) + "," +
+                        String.valueOf(qtyA6) + "," +
+                        String.valueOf(qtyA7) + "," +
+                        String.valueOf(qtyA8) + "," +
+                        String.valueOf(qtyB1) + "," +
+                        String.valueOf(qtyB2) + "," +
+                        String.valueOf(qtyB3) + "," +
+                        String.valueOf(qtyB4) + "," +
+                        String.valueOf(qtyB5) + "," +
+                        String.valueOf(qtyB6) + "," +
+                        String.valueOf(qtyB7) + "," +
+                        String.valueOf(qtyB8) + "," +
+                        String.valueOf(qtyV1) + "," +
+                        String.valueOf(qtyI1) + "," +
+                        String.valueOf(qtyI2) + "," +
+                        String.valueOf(qtyI3) + "," +
+                        String.valueOf(qtyI4) + "," +
+                        String.valueOf(qtyF1) + "," +
+                        String.valueOf(qtyF2) + "," +
+                        String.valueOf(qtyF3) + "," +
+                        String.valueOf(qtyF4) + "," +
+                        String.valueOf(qtyF5) + "," +
+                        String.valueOf(qtyF6) + "," +
+                        String.valueOf(qtyF7) + "," +
+                        String.valueOf(qtyF8) + "," +
+                        String.valueOf(qtyF9) + "," +
+                        String.valueOf(qtyK1) + "," +
+                        String.valueOf(qtyK2) + "," +
+                        String.valueOf(qtyK3) + "," +
+                        String.valueOf(qtyK4) + "," +
+                        String.valueOf(qtyK5) + "," +
+                        String.valueOf(qtyK6) + "," +
+                        String.valueOf(qtyT1) + "," +
+                        String.valueOf(qtyT2) + "," +
+                        String.valueOf(qtyT3) + "," +
+                        String.valueOf(qtyW1) + "," +
+                        String.valueOf(qtyW2) + "," +
+                        String.valueOf(qtyW3) + "," +
+                        String.valueOf(qtyW4) + "," +
+                        amountInteger100.toString() +"," +
+                        String.format("%8d", sequenceNumber);
+        return data;
+    }
+
+    // INITIALIZE
     public void initializeQty() {
         runOnUiThread(new Runnable(){
             public void run() {
@@ -1275,6 +1700,8 @@ public class PointOfSale extends AppCompatActivity  {
         qtyB4 = 0;
         qtyB5 = 0;
         qtyB6 = 0;
+        qtyB7 = 0;
+        qtyB8 = 0;
         qtyV1 = 0;
         qtyF1 = 0;
         qtyF2 = 0;
@@ -1288,6 +1715,7 @@ public class PointOfSale extends AppCompatActivity  {
         qtyW1 = 0;
         qtyW2 = 0;
         qtyW3 = 0;
+        qtyW4 = 0;
 
 
         priceA1 = BigDecimal.valueOf(2.00); // a Bieslook
@@ -1317,6 +1745,8 @@ public class PointOfSale extends AppCompatActivity  {
         priceB4 = BigDecimal.valueOf(3.80); // b Ham
         priceB5 = BigDecimal.valueOf(3.00); // b Appel
         priceB6 = BigDecimal.valueOf(3.00); // b Chocolade
+        priceB7 = BigDecimal.valueOf(3.00); // b Irish
+        priceB8 = BigDecimal.valueOf(3.00); // b Choc Orange
         priceV1 = BigDecimal.valueOf(2.00); // w Vanille
         priceF1 = BigDecimal.valueOf(1.50); // f Cola
         priceF2 = BigDecimal.valueOf(1.50); // f Cola Zero
@@ -1330,6 +1760,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
         priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
         priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
+        priceW4 = BigDecimal.valueOf(2.50); // w Gluewine
 
         amount = BigDecimal.valueOf(0);
             }
@@ -1384,6 +1815,8 @@ public class PointOfSale extends AppCompatActivity  {
                 textB4.setText(Integer.toString(qtyB4));
                 textB5.setText(Integer.toString(qtyB5));
                 textB6.setText(Integer.toString(qtyB6));
+                textB7.setText(Integer.toString(qtyB7));
+                textB8.setText(Integer.toString(qtyB8));
                 textV1.setText(Integer.toString(qtyV1));
                 textF1.setText(Integer.toString(qtyF1));
                 textF2.setText(Integer.toString(qtyF2));
@@ -1397,6 +1830,7 @@ public class PointOfSale extends AppCompatActivity  {
                 textW1.setText(Integer.toString(qtyW1));
                 textW2.setText(Integer.toString(qtyW2));
                 textW3.setText(Integer.toString(qtyW3));
+                textW4.setText(Integer.toString(qtyW4));
 
                 BigDecimal bdcurrentTotalAmount = amount.setScale(2, RoundingMode.HALF_EVEN);
                 textAmount.setText(bdcurrentTotalAmount.toString());

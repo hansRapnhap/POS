@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Bieslook"
         android:textSize="26sp"
@@ -24,7 +24,7 @@
         android:id="@+id/butA2"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Rozem"
         android:textSize="26sp"
@@ -36,7 +36,7 @@
         android:id="@+id/butA3"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Gorg"
         android:textSize="26sp"
@@ -47,7 +47,7 @@
         android:id="@+id/butA4"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Olijf"
         android:textSize="26sp"
@@ -59,7 +59,7 @@
         android:id="@+id/butA5"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Ham"
         android:textSize="26sp"
@@ -71,7 +71,7 @@
         android:id="@+id/butA6"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Chorr"
         android:textSize="26sp"
@@ -83,7 +83,7 @@
         android:id="@+id/butA7"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Kip"
         android:textSize="26sp"
@@ -95,7 +95,7 @@
         android:id="@+id/butA8"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="A Zalm"
         android:textSize="26sp"
@@ -107,7 +107,7 @@
         android:id="@+id/butI1"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Chocolat"
         android:textSize="26sp"
@@ -119,7 +119,7 @@
         android:id="@+id/butI2"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Cornet"
         android:textSize="26sp"
@@ -131,7 +131,7 @@
         android:id="@+id/butI3"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Vanille"
         android:textSize="26sp"
@@ -143,7 +143,7 @@
         android:id="@+id/butI4"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Satelite"
         android:textSize="26sp"
@@ -155,7 +155,7 @@
         android:id="@+id/butK1"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Expresso"
         android:textSize="26sp"
@@ -167,7 +167,7 @@
         android:id="@+id/butK2"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Expr M"
         android:textSize="26sp"
@@ -179,7 +179,7 @@
         android:id="@+id/butK3"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Lungo"
         android:textSize="26sp"
@@ -191,7 +191,7 @@
         android:id="@+id/butK4"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Lungo M"
         android:textSize="26sp"
@@ -203,7 +203,7 @@
         android:id="@+id/butK5"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Deca"
         android:textSize="26sp"
@@ -215,7 +215,7 @@
         android:id="@+id/butK6"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Deca M"
         android:textSize="26sp"
@@ -227,7 +227,7 @@
         android:id="@+id/butT1"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Yellow"
         android:textSize="26sp"
@@ -239,7 +239,7 @@
         android:id="@+id/butT2"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Green"
         android:textSize="26sp"
@@ -251,7 +251,7 @@
         android:id="@+id/butT3"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Rozenb"
         android:textSize="26sp"
@@ -276,13 +276,14 @@
     <Button
         android:id="@+id/butPrint"
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="80dp"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
         android:layout_marginBottom="8dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Print"
         android:textSize="26sp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -686,6 +687,34 @@
         app:layout_constraintTop_toTopOf="@+id/textB6" />
 
     <Button
+        android:id="@+id/butminB7"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="-"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/textB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textB7" />
+
+    <Button
+        android:id="@+id/butminB8"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="-"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/textB8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textB8" />
+
+    <Button
         android:id="@+id/butminV1"
         android:layout_width="60dp"
         android:layout_height="48dp"
@@ -869,6 +898,21 @@
 
 
     <Button
+        android:id="@+id/butminW4"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="-"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/textW4"
+        app:layout_constraintStart_toEndOf="@+id/textW4"
+        app:layout_constraintTop_toTopOf="@+id/textW4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
         android:id="@+id/butB1"
         android:layout_width="200dp"
         android:layout_height="48dp"
@@ -959,6 +1003,36 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
+        android:id="@+id/butB7"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Irish"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/butminA7"
+        app:layout_constraintEnd_toStartOf="@+id/textB7"
+        app:layout_constraintTop_toTopOf="@+id/butminA7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/butB8"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Choc Oranj"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/butminA8"
+        app:layout_constraintEnd_toStartOf="@+id/textB8"
+        app:layout_constraintTop_toTopOf="@+id/butminA8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
         android:id="@+id/butV1"
         android:layout_width="200dp"
         android:layout_height="48dp"
@@ -968,9 +1042,9 @@
         android:text="Vanille"
         android:textSize="26sp"
         app:backgroundTint="@color/vanille"
-        app:layout_constraintBottom_toBottomOf="@+id/butminA7"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI1"
         app:layout_constraintEnd_toStartOf="@+id/textV1"
-        app:layout_constraintTop_toTopOf="@+id/butminA7"
+        app:layout_constraintTop_toTopOf="@+id/butminI1"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -979,14 +1053,13 @@
         android:layout_height="48dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="8dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Cola"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminA8"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI2"
         app:layout_constraintEnd_toStartOf="@+id/textF1"
-        app:layout_constraintTop_toTopOf="@+id/butminA8"
+        app:layout_constraintTop_toTopOf="@+id/butminI2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -999,9 +1072,9 @@
         android:text="Cola Zero"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminI1"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI3"
         app:layout_constraintEnd_toStartOf="@+id/textF2"
-        app:layout_constraintTop_toTopOf="@+id/butminI1"
+        app:layout_constraintTop_toTopOf="@+id/butminI3"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1014,9 +1087,9 @@
         android:text="Ice Tea"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminI2"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI4"
         app:layout_constraintEnd_toStartOf="@+id/textF3"
-        app:layout_constraintTop_toTopOf="@+id/butminI2"
+        app:layout_constraintTop_toTopOf="@+id/butminI4"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1029,9 +1102,9 @@
         android:text="Fanta"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminI3"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK1"
         app:layout_constraintEnd_toStartOf="@+id/textF4"
-        app:layout_constraintTop_toTopOf="@+id/butminI3"
+        app:layout_constraintTop_toTopOf="@+id/butminK1"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1039,15 +1112,14 @@
         android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="20dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Appel"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminI4"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK2"
         app:layout_constraintEnd_toStartOf="@+id/textF5"
-        app:layout_constraintTop_toTopOf="@+id/butminI4"
+        app:layout_constraintTop_toTopOf="@+id/butminK2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1060,9 +1132,9 @@
         android:text="Sinaas"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK1"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK3"
         app:layout_constraintEnd_toStartOf="@+id/textF6"
-        app:layout_constraintTop_toTopOf="@+id/butminK1"
+        app:layout_constraintTop_toTopOf="@+id/butminK3"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1075,9 +1147,9 @@
         android:text="Cecemel"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK2"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK4"
         app:layout_constraintEnd_toStartOf="@+id/textF7"
-        app:layout_constraintTop_toTopOf="@+id/butminK2"
+        app:layout_constraintTop_toTopOf="@+id/butminK4"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1090,9 +1162,9 @@
         android:text="Plat W"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK3"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK5"
         app:layout_constraintEnd_toStartOf="@+id/textF8"
-        app:layout_constraintTop_toTopOf="@+id/butminK3"
+        app:layout_constraintTop_toTopOf="@+id/butminK5"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1105,9 +1177,9 @@
         android:text="Spuitw"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK4"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK6"
         app:layout_constraintEnd_toStartOf="@+id/textF9"
-        app:layout_constraintTop_toTopOf="@+id/butminK4"
+        app:layout_constraintTop_toTopOf="@+id/butminK6"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1120,9 +1192,9 @@
         android:text="Pils"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK5"
+        app:layout_constraintBottom_toBottomOf="@+id/butminT1"
         app:layout_constraintEnd_toStartOf="@+id/textW1"
-        app:layout_constraintTop_toTopOf="@+id/butminK5"
+        app:layout_constraintTop_toTopOf="@+id/butminT1"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1135,9 +1207,9 @@
         android:text="Witte w"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK6"
+        app:layout_constraintBottom_toBottomOf="@+id/butminT2"
         app:layout_constraintEnd_toStartOf="@+id/textW2"
-        app:layout_constraintTop_toTopOf="@+id/butminK6"
+        app:layout_constraintTop_toTopOf="@+id/butminT2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1150,11 +1222,25 @@
         android:text="Rode wijn"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminT1"
+        app:layout_constraintBottom_toBottomOf="@+id/butminT3"
         app:layout_constraintEnd_toStartOf="@+id/textW3"
-        app:layout_constraintTop_toTopOf="@+id/butminT1"
+        app:layout_constraintTop_toTopOf="@+id/butminT3"
         app:layout_constraintVertical_bias="0.0" />
 
+
+    <Button
+        android:id="@+id/butW4"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Gluewine"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintStart_toStartOf="@+id/butT3"
+        app:layout_constraintTop_toBottomOf="@+id/butT3" />
 
     <TextView
         android:id="@+id/textA1"
@@ -1536,6 +1622,34 @@
         />
 
     <TextView
+        android:id="@+id/textB7"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="B7"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/butB7"
+        app:layout_constraintEnd_toStartOf="@+id/butminB7"
+        app:layout_constraintTop_toTopOf="@+id/butB7"
+        />
+
+    <TextView
+        android:id="@+id/textB8"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="B6"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/butB8"
+        app:layout_constraintEnd_toStartOf="@+id/butminB8"
+        app:layout_constraintTop_toTopOf="@+id/butB8"
+        />
+
+    <TextView
         android:id="@+id/textV1"
         android:layout_width="60dp"
         android:layout_height="48dp"
@@ -1718,8 +1832,22 @@
         />
 
     <TextView
+        android:id="@+id/textW4"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="W4"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/butW4"
+        app:layout_constraintStart_toEndOf="@+id/butW4"
+        app:layout_constraintTop_toTopOf="@+id/butW4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/textAmount"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="38dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -1732,13 +1860,14 @@
 
     <TextView
         android:id="@+id/labelAmount"
-        android:layout_width="150dp"
+        android:layout_width="80dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:gravity="right|center_vertical"
         android:text="Totaal"
         android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/textAmount"
-        app:layout_constraintEnd_toEndOf="@+id/textAmount" />
+        app:layout_constraintBottom_toBottomOf="@+id/textAmount"
+        app:layout_constraintEnd_toStartOf="@+id/textAmount" />
 
     ></androidx.constraintlayout.widget.ConstraintLayout>

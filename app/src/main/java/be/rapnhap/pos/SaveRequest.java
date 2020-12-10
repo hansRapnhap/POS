@@ -50,6 +50,8 @@ public class SaveRequest {
                 "B gerookte ham" + "," +
                 "B appel" + "," +
                 "B chocolade" + "," +
+                "B Irish" + "," +
+                "B choc orang" + "," +
                 "Vanille" + "," +
                 "Big Chocolate" + "," +
                 "Cornet d'amour" + "," +
@@ -61,7 +63,7 @@ public class SaveRequest {
                 "Fanta" + "," +
                 "Appelsap" + "," +
                 "Minute Maid" + "," +
-                "Cécémel" + "," +
+                "Cecemel" + "," +
                 "Plat water" + "," +
                 "Spuitwater" + "," +
                 "Expresso" + "," +
@@ -76,7 +78,9 @@ public class SaveRequest {
                 "Jupiler" + "," +
                 "Wijn - Wit" + "," +
                 "Wijn - Rood" + "," +
-                 "\r\n";
+                "Wijn - Glue" + "," +
+                "Totaal (*100)" + "," +
+                "VolgNr  \r\n";
                 writer.append(dataToPrint);
             }
 

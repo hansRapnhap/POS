@@ -11,16 +11,18 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:layout_gravity="center_horizontal"
+        android:typeface="monospace"
         android:text="Er is niets te printen!"
+        android:id="@+id/messageTextView"
         />
     <Button
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="26sp"
-        android:text="Ok"
+        android:text="Print opnieuw"
         android:textColor="@color/white"
-        android:id="@+id/okButton"
+        android:id="@+id/printButton"
         />
 
     <Button
@@ -28,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="26sp"
-        android:text="Cancel"
+        android:text="Volgende klant"
         android:textColor="@color/white"
         android:id="@+id/cancelButton"
         />
