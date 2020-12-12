@@ -6,13 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class SaveRequest {
-    String data;
 
-    public SaveRequest(String data) {
-        this.data = data;
+    public SaveRequest() {
     }
 
-    public void saveData() {
+    public static void saveData(String data) {
         // Write data into file
         String fileDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
         String fileName = fileDate + "_POS.txt";

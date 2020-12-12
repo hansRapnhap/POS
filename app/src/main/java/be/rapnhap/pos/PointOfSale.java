@@ -1297,10 +1297,11 @@ public class PointOfSale extends AppCompatActivity  {
         butPrint.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                // save the data
-                String data = parseSaveData();
-                SaveRequest saveRequest = new SaveRequest(data);
-                saveRequest.saveData();
+                // save the data (only when something is entered)
+                if (amount.doubleValue() != 0) {
+                    String data = parseSaveData();
+                    SaveRequest.saveData(data);
+                }
 
                 // decide print action
                 Boolean printIsNeeded;
@@ -1831,6 +1832,307 @@ public class PointOfSale extends AppCompatActivity  {
                 textW2.setText(Integer.toString(qtyW2));
                 textW3.setText(Integer.toString(qtyW3));
                 textW4.setText(Integer.toString(qtyW4));
+                if (qtyA1 > 0) {
+                    textA1.setBackgroundColor(textA1.getContext().getResources().getColor(R.color.grey));
+                    textA1.setTextColor(textA1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA1.setBackgroundColor(textA1.getContext().getResources().getColor(R.color.white));
+                    textA1.setTextColor(textA1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA2 > 0) {
+                    textA2.setBackgroundColor(textA2.getContext().getResources().getColor(R.color.grey));
+                    textA2.setTextColor(textA2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA2.setBackgroundColor(textA2.getContext().getResources().getColor(R.color.white));
+                    textA2.setTextColor(textA2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA3 > 0) {
+                    textA3.setBackgroundColor(textA3.getContext().getResources().getColor(R.color.grey));
+                    textA3.setTextColor(textA3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA3.setBackgroundColor(textA3.getContext().getResources().getColor(R.color.white));
+                    textA3.setTextColor(textA3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA4 > 0) {
+                    textA4.setBackgroundColor(textA4.getContext().getResources().getColor(R.color.grey));
+                    textA4.setTextColor(textA4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA4.setBackgroundColor(textA4.getContext().getResources().getColor(R.color.white));
+                    textA4.setTextColor(textA4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA5 > 0) {
+                    textA5.setBackgroundColor(textA5.getContext().getResources().getColor(R.color.grey));
+                    textA5.setTextColor(textA5.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA5.setBackgroundColor(textA5.getContext().getResources().getColor(R.color.white));
+                    textA5.setTextColor(textA5.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA6 > 0) {
+                    textA6.setBackgroundColor(textA6.getContext().getResources().getColor(R.color.grey));
+                    textA6.setTextColor(textA6.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA6.setBackgroundColor(textA6.getContext().getResources().getColor(R.color.white));
+                    textA6.setTextColor(textA6.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA7 > 0) {
+                    textA7.setBackgroundColor(textA7.getContext().getResources().getColor(R.color.grey));
+                    textA7.setTextColor(textA7.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA7.setBackgroundColor(textA7.getContext().getResources().getColor(R.color.white));
+                    textA7.setTextColor(textA7.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyA8 > 0) {
+                    textA8.setBackgroundColor(textA8.getContext().getResources().getColor(R.color.grey));
+                    textA8.setTextColor(textA8.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textA8.setBackgroundColor(textA8.getContext().getResources().getColor(R.color.white));
+                    textA8.setTextColor(textA8.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI1 > 0) {
+                    textI1.setBackgroundColor(textI1.getContext().getResources().getColor(R.color.grey));
+                    textI1.setTextColor(textI1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI1.setBackgroundColor(textI1.getContext().getResources().getColor(R.color.white));
+                    textI1.setTextColor(textI1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI2 > 0) {
+                    textI2.setBackgroundColor(textI2.getContext().getResources().getColor(R.color.grey));
+                    textI2.setTextColor(textI2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI2.setBackgroundColor(textI2.getContext().getResources().getColor(R.color.white));
+                    textI2.setTextColor(textI2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI3 > 0) {
+                    textI3.setBackgroundColor(textI3.getContext().getResources().getColor(R.color.grey));
+                    textI3.setTextColor(textI3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI3.setBackgroundColor(textI3.getContext().getResources().getColor(R.color.white));
+                    textI3.setTextColor(textI3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI4 > 0) {
+                    textI4.setBackgroundColor(textI4.getContext().getResources().getColor(R.color.grey));
+                    textI4.setTextColor(textI4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI4.setBackgroundColor(textI4.getContext().getResources().getColor(R.color.white));
+                    textI4.setTextColor(textI4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK1 > 0) {
+                    textK1.setBackgroundColor(textK1.getContext().getResources().getColor(R.color.grey));
+                    textK1.setTextColor(textK1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK1.setBackgroundColor(textK1.getContext().getResources().getColor(R.color.white));
+                    textK1.setTextColor(textK1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK2 > 0) {
+                    textK2.setBackgroundColor(textK2.getContext().getResources().getColor(R.color.grey));
+                    textK2.setTextColor(textK2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK2.setBackgroundColor(textK2.getContext().getResources().getColor(R.color.white));
+                    textK2.setTextColor(textK2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK3 > 0) {
+                    textK3.setBackgroundColor(textK3.getContext().getResources().getColor(R.color.grey));
+                    textK3.setTextColor(textK3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK3.setBackgroundColor(textK3.getContext().getResources().getColor(R.color.white));
+                    textK3.setTextColor(textK3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK4 > 0) {
+                    textK4.setBackgroundColor(textK4.getContext().getResources().getColor(R.color.grey));
+                    textK4.setTextColor(textK4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK4.setBackgroundColor(textK4.getContext().getResources().getColor(R.color.white));
+                    textK4.setTextColor(textK4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK5 > 0) {
+                    textK5.setBackgroundColor(textK5.getContext().getResources().getColor(R.color.grey));
+                    textK5.setTextColor(textK5.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK5.setBackgroundColor(textK5.getContext().getResources().getColor(R.color.white));
+                    textK5.setTextColor(textK5.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyK6 > 0) {
+                    textK6.setBackgroundColor(textK6.getContext().getResources().getColor(R.color.grey));
+                    textK6.setTextColor(textK6.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textK6.setBackgroundColor(textK6.getContext().getResources().getColor(R.color.white));
+                    textK6.setTextColor(textK6.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyT1 > 0) {
+                    textT1.setBackgroundColor(textT1.getContext().getResources().getColor(R.color.grey));
+                    textT1.setTextColor(textT1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textT1.setBackgroundColor(textT1.getContext().getResources().getColor(R.color.white));
+                    textT1.setTextColor(textT1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyT2 > 0) {
+                    textT2.setBackgroundColor(textT2.getContext().getResources().getColor(R.color.grey));
+                    textT2.setTextColor(textT2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textT2.setBackgroundColor(textT2.getContext().getResources().getColor(R.color.white));
+                    textT2.setTextColor(textT2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyT3 > 0) {
+                    textT3.setBackgroundColor(textT3.getContext().getResources().getColor(R.color.grey));
+                    textT3.setTextColor(textT3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textT3.setBackgroundColor(textT3.getContext().getResources().getColor(R.color.white));
+                    textT3.setTextColor(textT3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyW4 > 0) {
+                    textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.grey));
+                    textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.white));
+                    textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB1 > 0) {
+                    textB1.setBackgroundColor(textB1.getContext().getResources().getColor(R.color.grey));
+                    textB1.setTextColor(textB1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB1.setBackgroundColor(textB1.getContext().getResources().getColor(R.color.white));
+                    textB1.setTextColor(textB1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB2 > 0) {
+                    textB2.setBackgroundColor(textB2.getContext().getResources().getColor(R.color.grey));
+                    textB2.setTextColor(textB2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB2.setBackgroundColor(textB2.getContext().getResources().getColor(R.color.white));
+                    textB2.setTextColor(textB2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB3 > 0) {
+                    textB3.setBackgroundColor(textB3.getContext().getResources().getColor(R.color.grey));
+                    textB3.setTextColor(textB3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB3.setBackgroundColor(textB3.getContext().getResources().getColor(R.color.white));
+                    textB3.setTextColor(textB3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB4 > 0) {
+                    textB4.setBackgroundColor(textB4.getContext().getResources().getColor(R.color.grey));
+                    textB4.setTextColor(textB4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB4.setBackgroundColor(textB4.getContext().getResources().getColor(R.color.white));
+                    textB4.setTextColor(textB4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB5 > 0) {
+                    textB5.setBackgroundColor(textB5.getContext().getResources().getColor(R.color.grey));
+                    textB5.setTextColor(textB5.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB5.setBackgroundColor(textB5.getContext().getResources().getColor(R.color.white));
+                    textB5.setTextColor(textB5.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB6 > 0) {
+                    textB6.setBackgroundColor(textB6.getContext().getResources().getColor(R.color.grey));
+                    textB6.setTextColor(textB6.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB6.setBackgroundColor(textB6.getContext().getResources().getColor(R.color.white));
+                    textB6.setTextColor(textB6.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB7 > 0) {
+                    textB7.setBackgroundColor(textB7.getContext().getResources().getColor(R.color.grey));
+                    textB7.setTextColor(textB7.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB7.setBackgroundColor(textB7.getContext().getResources().getColor(R.color.white));
+                    textB7.setTextColor(textB7.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyB8 > 0) {
+                    textB8.setBackgroundColor(textB8.getContext().getResources().getColor(R.color.grey));
+                    textB8.setTextColor(textB8.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textB8.setBackgroundColor(textB8.getContext().getResources().getColor(R.color.white));
+                    textB8.setTextColor(textB8.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyV1 > 0) {
+                    textV1.setBackgroundColor(textV1.getContext().getResources().getColor(R.color.grey));
+                    textV1.setTextColor(textV1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textV1.setBackgroundColor(textV1.getContext().getResources().getColor(R.color.white));
+                    textV1.setTextColor(textV1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF1 > 0) {
+                    textF1.setBackgroundColor(textF1.getContext().getResources().getColor(R.color.grey));
+                    textF1.setTextColor(textF1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF1.setBackgroundColor(textF1.getContext().getResources().getColor(R.color.white));
+                    textF1.setTextColor(textF1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF2 > 0) {
+                    textF2.setBackgroundColor(textF2.getContext().getResources().getColor(R.color.grey));
+                    textF2.setTextColor(textF2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF2.setBackgroundColor(textF2.getContext().getResources().getColor(R.color.white));
+                    textF2.setTextColor(textF2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF3 > 0) {
+                    textF3.setBackgroundColor(textF3.getContext().getResources().getColor(R.color.grey));
+                    textF3.setTextColor(textF3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF3.setBackgroundColor(textF3.getContext().getResources().getColor(R.color.white));
+                    textF3.setTextColor(textF3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF4 > 0) {
+                    textF4.setBackgroundColor(textF4.getContext().getResources().getColor(R.color.grey));
+                    textF4.setTextColor(textF4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF4.setBackgroundColor(textF4.getContext().getResources().getColor(R.color.white));
+                    textF4.setTextColor(textF4.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF5 > 0) {
+                    textF5.setBackgroundColor(textF5.getContext().getResources().getColor(R.color.grey));
+                    textF5.setTextColor(textF5.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF5.setBackgroundColor(textF5.getContext().getResources().getColor(R.color.white));
+                    textF5.setTextColor(textF5.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF6 > 0) {
+                    textF6.setBackgroundColor(textF6.getContext().getResources().getColor(R.color.grey));
+                    textF6.setTextColor(textF6.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF6.setBackgroundColor(textF6.getContext().getResources().getColor(R.color.white));
+                    textF6.setTextColor(textF6.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF7 > 0) {
+                    textF7.setBackgroundColor(textF7.getContext().getResources().getColor(R.color.grey));
+                    textF7.setTextColor(textF7.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF7.setBackgroundColor(textF7.getContext().getResources().getColor(R.color.white));
+                    textF7.setTextColor(textF7.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF8 > 0) {
+                    textF8.setBackgroundColor(textF8.getContext().getResources().getColor(R.color.grey));
+                    textF8.setTextColor(textF8.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF8.setBackgroundColor(textF8.getContext().getResources().getColor(R.color.white));
+                    textF8.setTextColor(textF8.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyF9 > 0) {
+                    textF9.setBackgroundColor(textF9.getContext().getResources().getColor(R.color.grey));
+                    textF9.setTextColor(textF9.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textF9.setBackgroundColor(textF9.getContext().getResources().getColor(R.color.white));
+                    textF9.setTextColor(textF9.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyW1 > 0) {
+                    textW1.setBackgroundColor(textW1.getContext().getResources().getColor(R.color.grey));
+                    textW1.setTextColor(textW1.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textW1.setBackgroundColor(textW1.getContext().getResources().getColor(R.color.white));
+                    textW1.setTextColor(textW1.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyW2 > 0) {
+                    textW2.setBackgroundColor(textW2.getContext().getResources().getColor(R.color.grey));
+                    textW2.setTextColor(textW2.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textW2.setBackgroundColor(textW2.getContext().getResources().getColor(R.color.white));
+                    textW2.setTextColor(textW2.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyW3 > 0) {
+                    textW3.setBackgroundColor(textW3.getContext().getResources().getColor(R.color.grey));
+                    textW3.setTextColor(textW3.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textW3.setBackgroundColor(textW3.getContext().getResources().getColor(R.color.white));
+                    textW3.setTextColor(textW3.getContext().getResources().getColor(R.color.grey));
+                }
 
                 BigDecimal bdcurrentTotalAmount = amount.setScale(2, RoundingMode.HALF_EVEN);
                 textAmount.setText(bdcurrentTotalAmount.toString());
