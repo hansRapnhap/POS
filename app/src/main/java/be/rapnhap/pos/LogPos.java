@@ -30,7 +30,7 @@ public class LogPos {
 
             FileWriter writer = new FileWriter(fileHandle, true);
 
-            String dataDate = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+            String dataDate = new SimpleDateFormat("yyyyMMdd_HHmmssSSS").format(Calendar.getInstance().getTime());
 
             String dataToPrint = dataDate + " - " + data + " \r\n";
             writer.append(dataToPrint);
