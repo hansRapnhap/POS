@@ -1870,4 +1870,4 @@
         app:layout_constraintBottom_toBottomOf="@+id/textAmount"
         app:layout_constraintEnd_toStartOf="@+id/textAmount" />
 
-    ></androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
