@@ -174,8 +174,8 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelB4 = "B gerookte ham";
     public String labelB5 = "B appel";
     public String labelB6 = "B chocolade";
-    public String labelB7 = "Irish";
-    public String labelB8 = "Choc Or";
+    public String labelB7 = "B kokos";
+    public String labelB8 = "Orangette";
     public String labelV1 = "Vanille";
     public String labelI1 = "Big Chocolate";
     public String labelI2 = "Cornet d'amour";
@@ -1746,7 +1746,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceB4 = BigDecimal.valueOf(3.80); // b Ham
         priceB5 = BigDecimal.valueOf(3.00); // b Appel
         priceB6 = BigDecimal.valueOf(3.00); // b Chocolade
-        priceB7 = BigDecimal.valueOf(3.80); // b Irish
+        priceB7 = BigDecimal.valueOf(3.50); // b Kokos
         priceB8 = BigDecimal.valueOf(3.50); // b Choc Orange
         priceV1 = BigDecimal.valueOf(2.00); // w Vanille
         priceF1 = BigDecimal.valueOf(1.50); // f Cola
