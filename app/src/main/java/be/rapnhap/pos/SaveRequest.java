@@ -48,7 +48,7 @@ public class SaveRequest {
                 "B gerookte ham" + "," +
                 "B appel" + "," +
                 "B chocolade" + "," +
-                "B Irish" + "," +
+                "B Kokos" + "," +
                 "B choc orang" + "," +
                 "Vanille" + "," +
                 "Big Chocolate" + "," +
