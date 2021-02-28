@@ -1845,9 +1845,9 @@ public class PointOfSale extends AppCompatActivity  {
         priceI2 = BigDecimal.valueOf(2.00); // i Cornet
         priceI3 = BigDecimal.valueOf(1.20); // i maxi vanille
         priceI4 = BigDecimal.valueOf(1.00); // i Satelite
-        priceI5 = BigDecimal.valueOf(1.50); // i Sumimba Vanille
-        priceI6 = BigDecimal.valueOf(1.50); // i Sumimba Chocolade
-        priceI7 = BigDecimal.valueOf(1.50); // i Sumimba Aardbei
+        priceI5 = BigDecimal.valueOf(1.80); // i Sumimba Vanille
+        priceI6 = BigDecimal.valueOf(1.80); // i Sumimba Chocolade
+        priceI7 = BigDecimal.valueOf(1.80); // i Sumimba Aardbei
         priceK1 = BigDecimal.valueOf(1.80); // k Expresso
         priceK2 = BigDecimal.valueOf(2.00); // k Expresso Melk
         priceK3 = BigDecimal.valueOf(2.00); // k Lungo
