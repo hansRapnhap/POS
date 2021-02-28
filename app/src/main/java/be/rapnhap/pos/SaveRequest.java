@@ -55,6 +55,10 @@ public class SaveRequest {
                 "Cornet d'amour" + "," +
                 "Maxi vanille" + "," +
                 "Satelite" + "," +
+                //SUBIMBA
+                "Subimba Van" + "," +
+                "Subimba Choc" + "," +
+                "Subimba Aard" + "," +
                 "Coca-Cola" + "," +
                 "Cola zero" + "," +
                 "Ice - Tea" + "," +
@@ -76,7 +80,7 @@ public class SaveRequest {
                 "Jupiler" + "," +
                 "Wijn - Wit" + "," +
                 "Wijn - Rood" + "," +
-                "Wijn - Glue" + "," +
+                //"Wijn - Glue" + "," +
                 "Totaal (*100)" + "," +
                 "VolgNr  \r\n";
                 writer.append(dataToPrint);

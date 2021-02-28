@@ -38,6 +38,9 @@ public class PointOfSale extends AppCompatActivity  {
     public int qtyI2 = 0;
     public int qtyI3 = 0;
     public int qtyI4 = 0;
+    public int qtyI5 = 0;
+    public int qtyI6 = 0;
+    public int qtyI7 = 0;
     public int qtyK1 = 0;
     public int qtyK2 = 0;
     public int qtyK3 = 0;
@@ -68,7 +71,7 @@ public class PointOfSale extends AppCompatActivity  {
     public int qtyW1 = 0;
     public int qtyW2 = 0;
     public int qtyW3 = 0;
-    public int qtyW4 = 0;
+    //public int qtyW4 = 0;
 
     public BigDecimal priceA1;
     public BigDecimal priceA2;
@@ -82,6 +85,9 @@ public class PointOfSale extends AppCompatActivity  {
     public BigDecimal priceI2;
     public BigDecimal priceI3;
     public BigDecimal priceI4;
+    public BigDecimal priceI5;
+    public BigDecimal priceI6;
+    public BigDecimal priceI7;
     public BigDecimal priceK1;
     public BigDecimal priceK2;
     public BigDecimal priceK3;
@@ -112,7 +118,7 @@ public class PointOfSale extends AppCompatActivity  {
     public BigDecimal priceW1;
     public BigDecimal priceW2;
     public BigDecimal priceW3;
-    public BigDecimal priceW4;
+    //public BigDecimal priceW4;
 
     public BigDecimal amount;
 
@@ -128,6 +134,9 @@ public class PointOfSale extends AppCompatActivity  {
     public TextView textI2;
     public TextView textI3;
     public TextView textI4;
+    public TextView textI5;
+    public TextView textI6;
+    public TextView textI7;
     public TextView textK1;
     public TextView textK2;
     public TextView textK3;
@@ -158,7 +167,7 @@ public class PointOfSale extends AppCompatActivity  {
     public TextView textW1;
     public TextView textW2;
     public TextView textW3;
-    public TextView textW4;
+    //public TextView textW4;
 
     public String labelA1 = "A bieslook";
     public String labelA2 = "A rozemarijn ";
@@ -181,6 +190,9 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelI2 = "Cornet d'amour";
     public String labelI3 = "Maxi vanille";
     public String labelI4 = "Satelite";
+    public String labelI5 = "Sub Vanille";
+    public String labelI6 = "Sub Chocol.";
+    public String labelI7 = "Sub aardbei";
     public String labelF1 = "Coca-Cola";
     public String labelF2 = "Cola zero";
     public String labelF3 = "Ice - Tea";
@@ -202,7 +214,7 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelW1 = "Jupiler";
     public String labelW2 = "Wijn, Wit";
     public String labelW3 = "Wijn, Rood";
-    public String labelW4 = "Gluewine";
+    //public String labelW4 = "Gluewine";
     public String labelD1 = "Pannacotta";
     public String labelD2 = "Chocolademousse";
 
@@ -251,6 +263,9 @@ public class PointOfSale extends AppCompatActivity  {
         textI2 = findViewById(R.id.textI2);
         textI3 = findViewById(R.id.textI3);
         textI4 = findViewById(R.id.textI4);
+        textI5 = findViewById(R.id.textI5);
+        textI6 = findViewById(R.id.textI6);
+        textI7 = findViewById(R.id.textI7);
         textK1 = findViewById(R.id.textK1);
         textK2 = findViewById(R.id.textK2);
         textK3 = findViewById(R.id.textK3);
@@ -281,7 +296,7 @@ public class PointOfSale extends AppCompatActivity  {
         textW1 = findViewById(R.id.textW1);
         textW2 = findViewById(R.id.textW2);
         textW3 = findViewById(R.id.textW3);
-        textW4 = findViewById(R.id.textW4);
+        //textW4 = findViewById(R.id.textW4);
 
         textAmount = findViewById(R.id.textAmount);
 
@@ -297,6 +312,9 @@ public class PointOfSale extends AppCompatActivity  {
         Button butI2 = (Button) findViewById(R.id.butI2);
         Button butI3 = (Button) findViewById(R.id.butI3);
         Button butI4 = (Button) findViewById(R.id.butI4);
+        Button butI5 = (Button) findViewById(R.id.butI5);
+        Button butI6 = (Button) findViewById(R.id.butI6);
+        Button butI7 = (Button) findViewById(R.id.butI7);
         Button butK1 = (Button) findViewById(R.id.butK1);
         Button butK2 = (Button) findViewById(R.id.butK2);
         Button butK3 = (Button) findViewById(R.id.butK3);
@@ -327,7 +345,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butW1 = (Button) findViewById(R.id.butW1);
         Button butW2 = (Button) findViewById(R.id.butW2);
         Button butW3 = (Button) findViewById(R.id.butW3);
-        Button butW4 = (Button) findViewById(R.id.butW4);
+        //Button butW4 = (Button) findViewById(R.id.butW4);
 
         Button butMinA1 = (Button) findViewById(R.id.butminA1);
         Button butMinA2 = (Button) findViewById(R.id.butminA2);
@@ -341,6 +359,9 @@ public class PointOfSale extends AppCompatActivity  {
         Button butMinI2 = (Button) findViewById(R.id.butminI2);
         Button butMinI3 = (Button) findViewById(R.id.butminI3);
         Button butMinI4 = (Button) findViewById(R.id.butminI4);
+        Button butMinI5 = (Button) findViewById(R.id.butminI5);
+        Button butMinI6 = (Button) findViewById(R.id.butminI6);
+        Button butMinI7 = (Button) findViewById(R.id.butminI7);
         Button butMinK1 = (Button) findViewById(R.id.butminK1);
         Button butMinK2 = (Button) findViewById(R.id.butminK2);
         Button butMinK3 = (Button) findViewById(R.id.butminK3);
@@ -371,7 +392,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butMinW1 = (Button) findViewById(R.id.butminW1);
         Button butMinW2 = (Button) findViewById(R.id.butminW2);
         Button butMinW3 = (Button) findViewById(R.id.butminW3);
-        Button butMinW4 = (Button) findViewById(R.id.butminW4);
+        //Button butMinW4 = (Button) findViewById(R.id.butminW4);
 
         // INITIALIZE --------------------------------------------------------------------
         initializeQty();
@@ -628,6 +649,72 @@ public class PointOfSale extends AppCompatActivity  {
                 }
             }
         });
+
+        // I5
+        butI5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyI5 = qtyI5 + 1;
+                amount = amount.add(priceI5);
+                loadData();
+            }
+        });
+
+        butMinI5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyI5 > 0) {
+                    qtyI5 = qtyI5 - 1;
+                    amount = amount.subtract(priceI5);
+                    loadData();
+                }
+            }
+        });
+
+        // I6
+        butI6.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyI6 = qtyI6 + 1;
+                amount = amount.add(priceI6);
+                loadData();
+            }
+        });
+
+        butMinI6.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyI6 > 0) {
+                    qtyI6 = qtyI6 - 1;
+                    amount = amount.subtract(priceI6);
+                    loadData();
+                }
+            }
+        });
+
+        // I7
+        butI7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qtyI7 = qtyI7 + 1;
+                amount = amount.add(priceI7);
+                loadData();
+            }
+        });
+
+        butMinI7.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (qtyI7 > 0) {
+                    qtyI7 = qtyI7 - 1;
+                    amount = amount.subtract(priceI7);
+                    loadData();
+                }
+            }
+        });
+
+
+
 
         // K1
         butK1.setOnClickListener(new OnClickListener() {
@@ -1260,6 +1347,7 @@ public class PointOfSale extends AppCompatActivity  {
         });
 
         // W4
+        /*
         butW4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1279,7 +1367,7 @@ public class PointOfSale extends AppCompatActivity  {
                 }
             }
         });
-
+        */
 
         // Reset
         Button butReset = (Button) findViewById(R.id.butReset);
@@ -1468,6 +1556,24 @@ public class PointOfSale extends AppCompatActivity  {
             amountLine = BigDecimal.valueOf(qtyI4).multiply(priceI4);
             line += String.format("%5.2f", amountLine) + "\n";
         }
+        if (qtyI5 > 0) {
+            line += String.format("%1$2s", qtyI5) + " ";
+            line += String.format("%-15s", labelI5) + " ";
+            amountLine = BigDecimal.valueOf(qtyI5).multiply(priceI5);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI6 > 0) {
+            line += String.format("%1$2s", qtyI6) + " ";
+            line += String.format("%-15s", labelI6) + " ";
+            amountLine = BigDecimal.valueOf(qtyI6).multiply(priceI6);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
+        if (qtyI7 > 0) {
+            line += String.format("%1$2s", qtyI7) + " ";
+            line += String.format("%-15s", labelI7) + " ";
+            amountLine = BigDecimal.valueOf(qtyI7).multiply(priceI7);
+            line += String.format("%5.2f", amountLine) + "\n";
+        }
         if (qtyK1 > 0) {
             line += String.format("%1$2s", qtyK1) + " ";
             line += String.format("%-15s", labelK1) + " ";
@@ -1594,12 +1700,14 @@ public class PointOfSale extends AppCompatActivity  {
             amountLine = BigDecimal.valueOf(qtyW3).multiply(priceW3);
             line += String.format("%5.2f", amountLine) + "\n";
         }
+        /*
         if (qtyW4 > 0) {
             line += String.format("%1$2s", qtyW4) + " ";
             line += String.format("%-15s", labelW4) + " ";
             amountLine = BigDecimal.valueOf(qtyW4).multiply(priceW4);
             line += String.format("%5.2f", amountLine) + "\n";
         }
+        */
 
         // print the total amount
         line += "                --------\n";
@@ -1643,6 +1751,9 @@ public class PointOfSale extends AppCompatActivity  {
                         String.valueOf(qtyI2) + "," +
                         String.valueOf(qtyI3) + "," +
                         String.valueOf(qtyI4) + "," +
+                        String.valueOf(qtyI5) + "," +
+                        String.valueOf(qtyI6) + "," +
+                        String.valueOf(qtyI7) + "," +
                         String.valueOf(qtyF1) + "," +
                         String.valueOf(qtyF2) + "," +
                         String.valueOf(qtyF3) + "," +
@@ -1664,7 +1775,7 @@ public class PointOfSale extends AppCompatActivity  {
                         String.valueOf(qtyW1) + "," +
                         String.valueOf(qtyW2) + "," +
                         String.valueOf(qtyW3) + "," +
-                        String.valueOf(qtyW4) + "," +
+                        //String.valueOf(qtyW4) + "," +
                         amountInteger100.toString() +"," +
                         String.format("%8d", sequenceNumber);
         return data;
@@ -1686,6 +1797,9 @@ public class PointOfSale extends AppCompatActivity  {
         qtyI2 = 0;
         qtyI3 = 0;
         qtyI4 = 0;
+        qtyI5 = 0;
+        qtyI6 = 0;
+        qtyI7 = 0;
         qtyK1 = 0;
         qtyK2 = 0;
         qtyK3 = 0;
@@ -1716,7 +1830,7 @@ public class PointOfSale extends AppCompatActivity  {
         qtyW1 = 0;
         qtyW2 = 0;
         qtyW3 = 0;
-        qtyW4 = 0;
+        //qtyW4 = 0;
 
 
         priceA1 = BigDecimal.valueOf(2.00); // a Bieslook
@@ -1731,6 +1845,9 @@ public class PointOfSale extends AppCompatActivity  {
         priceI2 = BigDecimal.valueOf(2.00); // i Cornet
         priceI3 = BigDecimal.valueOf(1.20); // i maxi vanille
         priceI4 = BigDecimal.valueOf(1.00); // i Satelite
+        priceI5 = BigDecimal.valueOf(1.50); // i Sumimba Vanille
+        priceI6 = BigDecimal.valueOf(1.50); // i Sumimba Chocolade
+        priceI7 = BigDecimal.valueOf(1.50); // i Sumimba Aardbei
         priceK1 = BigDecimal.valueOf(1.80); // k Expresso
         priceK2 = BigDecimal.valueOf(2.00); // k Expresso Melk
         priceK3 = BigDecimal.valueOf(2.00); // k Lungo
@@ -1761,7 +1878,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
         priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
         priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
-        priceW4 = BigDecimal.valueOf(3.00); // w Gluewine
+        //priceW4 = BigDecimal.valueOf(3.00); // w Gluewine
 
         amount = BigDecimal.valueOf(0);
             }
@@ -1801,6 +1918,9 @@ public class PointOfSale extends AppCompatActivity  {
                 textI2.setText(Integer.toString(qtyI2));
                 textI3.setText(Integer.toString(qtyI3));
                 textI4.setText(Integer.toString(qtyI4));
+                textI5.setText(Integer.toString(qtyI5));
+                textI6.setText(Integer.toString(qtyI6));
+                textI7.setText(Integer.toString(qtyI7));
                 textK1.setText(Integer.toString(qtyK1));
                 textK2.setText(Integer.toString(qtyK2));
                 textK3.setText(Integer.toString(qtyK3));
@@ -1831,7 +1951,7 @@ public class PointOfSale extends AppCompatActivity  {
                 textW1.setText(Integer.toString(qtyW1));
                 textW2.setText(Integer.toString(qtyW2));
                 textW3.setText(Integer.toString(qtyW3));
-                textW4.setText(Integer.toString(qtyW4));
+                //textW4.setText(Integer.toString(qtyW4));
                 if (qtyA1 > 0) {
                     textA1.setBackgroundColor(textA1.getContext().getResources().getColor(R.color.grey));
                     textA1.setTextColor(textA1.getContext().getResources().getColor(R.color.white));
@@ -1916,6 +2036,27 @@ public class PointOfSale extends AppCompatActivity  {
                     textI4.setBackgroundColor(textI4.getContext().getResources().getColor(R.color.white));
                     textI4.setTextColor(textI4.getContext().getResources().getColor(R.color.grey));
                 }
+                if (qtyI5 > 0) {
+                    textI5.setBackgroundColor(textI5.getContext().getResources().getColor(R.color.grey));
+                    textI5.setTextColor(textI5.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI5.setBackgroundColor(textI5.getContext().getResources().getColor(R.color.white));
+                    textI5.setTextColor(textI5.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI6 > 0) {
+                    textI6.setBackgroundColor(textI6.getContext().getResources().getColor(R.color.grey));
+                    textI6.setTextColor(textI6.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI6.setBackgroundColor(textI6.getContext().getResources().getColor(R.color.white));
+                    textI6.setTextColor(textI6.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyI7 > 0) {
+                    textI7.setBackgroundColor(textI7.getContext().getResources().getColor(R.color.grey));
+                    textI7.setTextColor(textI7.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textI7.setBackgroundColor(textI7.getContext().getResources().getColor(R.color.white));
+                    textI7.setTextColor(textI7.getContext().getResources().getColor(R.color.grey));
+                }
                 if (qtyK1 > 0) {
                     textK1.setBackgroundColor(textK1.getContext().getResources().getColor(R.color.grey));
                     textK1.setTextColor(textK1.getContext().getResources().getColor(R.color.white));
@@ -1979,6 +2120,7 @@ public class PointOfSale extends AppCompatActivity  {
                     textT3.setBackgroundColor(textT3.getContext().getResources().getColor(R.color.white));
                     textT3.setTextColor(textT3.getContext().getResources().getColor(R.color.grey));
                 }
+                /*
                 if (qtyW4 > 0) {
                     textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.grey));
                     textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.white));
@@ -1986,6 +2128,7 @@ public class PointOfSale extends AppCompatActivity  {
                     textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.white));
                     textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.grey));
                 }
+                */
                 if (qtyB1 > 0) {
                     textB1.setBackgroundColor(textB1.getContext().getResources().getColor(R.color.grey));
                     textB1.setTextColor(textB1.getContext().getResources().getColor(R.color.white));

@@ -151,6 +151,49 @@
         app:layout_constraintStart_toStartOf="@+id/butI3"
         app:layout_constraintTop_toBottomOf="@+id/butI3" />
 
+
+    <Button
+        android:id="@+id/butI5"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="S VANILLE"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintStart_toStartOf="@+id/butI4"
+        app:layout_constraintTop_toBottomOf="@+id/butI4" />
+
+    <Button
+        android:id="@+id/butI6"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="S CHOC"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintStart_toStartOf="@+id/butI5"
+        app:layout_constraintTop_toBottomOf="@+id/butI5" />
+
+    <Button
+        android:id="@+id/butI7"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="S AARDBEI"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintStart_toStartOf="@+id/butI6"
+        app:layout_constraintTop_toBottomOf="@+id/butI6" />
+
     <Button
         android:id="@+id/butK1"
         android:layout_width="200dp"
@@ -160,8 +203,8 @@
         android:text="Expresso"
         android:textSize="26sp"
         app:backgroundTint="@color/brown"
-        app:layout_constraintStart_toStartOf="@+id/butI4"
-        app:layout_constraintTop_toBottomOf="@+id/butI4" />
+        app:layout_constraintStart_toStartOf="@+id/butI7"
+        app:layout_constraintTop_toBottomOf="@+id/butI7" />
 
     <Button
         android:id="@+id/butK2"
@@ -466,6 +509,8 @@
         app:layout_constraintStart_toEndOf="@+id/textI4"
         app:layout_constraintTop_toTopOf="@+id/textI4"
         />
+
+
 
     <Button
         android:id="@+id/butminK1"
@@ -898,7 +943,7 @@
 
 
     <Button
-        android:id="@+id/butminW4"
+        android:id="@+id/butminI5"
         android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -907,9 +952,39 @@
         android:text="-"
         android:textSize="26sp"
         app:backgroundTint="@color/special"
-        app:layout_constraintBottom_toBottomOf="@+id/textW4"
-        app:layout_constraintStart_toEndOf="@+id/textW4"
-        app:layout_constraintTop_toTopOf="@+id/textW4"
+        app:layout_constraintBottom_toBottomOf="@+id/textI5"
+        app:layout_constraintStart_toEndOf="@+id/textI5"
+        app:layout_constraintTop_toTopOf="@+id/textI5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/butminI6"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="-"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/textI6"
+        app:layout_constraintStart_toEndOf="@+id/textI6"
+        app:layout_constraintTop_toTopOf="@+id/textI6"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/butminI7"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="-"
+        android:textSize="26sp"
+        app:backgroundTint="@color/special"
+        app:layout_constraintBottom_toBottomOf="@+id/textI7"
+        app:layout_constraintStart_toEndOf="@+id/textI7"
+        app:layout_constraintTop_toTopOf="@+id/textI7"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -1102,9 +1177,9 @@
         android:text="Fanta"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK1"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI5"
         app:layout_constraintEnd_toStartOf="@+id/textF4"
-        app:layout_constraintTop_toTopOf="@+id/butminK1"
+        app:layout_constraintTop_toTopOf="@+id/butminI5"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1117,9 +1192,9 @@
         android:text="Appel"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK2"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI6"
         app:layout_constraintEnd_toStartOf="@+id/textF5"
-        app:layout_constraintTop_toTopOf="@+id/butminK2"
+        app:layout_constraintTop_toTopOf="@+id/butminI6"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1132,9 +1207,9 @@
         android:text="Sinaas"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK3"
+        app:layout_constraintBottom_toBottomOf="@+id/butminI7"
         app:layout_constraintEnd_toStartOf="@+id/textF6"
-        app:layout_constraintTop_toTopOf="@+id/butminK3"
+        app:layout_constraintTop_toTopOf="@+id/butminI7"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1147,9 +1222,9 @@
         android:text="Cecemel"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK4"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK1"
         app:layout_constraintEnd_toStartOf="@+id/textF7"
-        app:layout_constraintTop_toTopOf="@+id/butminK4"
+        app:layout_constraintTop_toTopOf="@+id/butminK1"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1162,9 +1237,9 @@
         android:text="Plat W"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK5"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK2"
         app:layout_constraintEnd_toStartOf="@+id/textF8"
-        app:layout_constraintTop_toTopOf="@+id/butminK5"
+        app:layout_constraintTop_toTopOf="@+id/butminK2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1177,9 +1252,9 @@
         android:text="Spuitw"
         android:textSize="26sp"
         app:backgroundTint="@color/frisdrank"
-        app:layout_constraintBottom_toBottomOf="@+id/butminK6"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK3"
         app:layout_constraintEnd_toStartOf="@+id/textF9"
-        app:layout_constraintTop_toTopOf="@+id/butminK6"
+        app:layout_constraintTop_toTopOf="@+id/butminK3"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1192,9 +1267,9 @@
         android:text="Pils"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminT1"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK4"
         app:layout_constraintEnd_toStartOf="@+id/textW1"
-        app:layout_constraintTop_toTopOf="@+id/butminT1"
+        app:layout_constraintTop_toTopOf="@+id/butminK4"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1207,9 +1282,9 @@
         android:text="Witte w"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminT2"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK5"
         app:layout_constraintEnd_toStartOf="@+id/textW2"
-        app:layout_constraintTop_toTopOf="@+id/butminT2"
+        app:layout_constraintTop_toTopOf="@+id/butminK5"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -1222,25 +1297,10 @@
         android:text="Rode wijn"
         android:textSize="26sp"
         app:backgroundTint="@color/wijn"
-        app:layout_constraintBottom_toBottomOf="@+id/butminT3"
+        app:layout_constraintBottom_toBottomOf="@+id/butminK6"
         app:layout_constraintEnd_toStartOf="@+id/textW3"
-        app:layout_constraintTop_toTopOf="@+id/butminT3"
+        app:layout_constraintTop_toTopOf="@+id/butminK6"
         app:layout_constraintVertical_bias="0.0" />
-
-
-    <Button
-        android:id="@+id/butW4"
-        android:layout_width="200dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Gluewine"
-        android:textSize="26sp"
-        app:backgroundTint="@color/special"
-        app:layout_constraintStart_toStartOf="@+id/butT3"
-        app:layout_constraintTop_toBottomOf="@+id/butT3" />
 
     <TextView
         android:id="@+id/textA1"
@@ -1832,17 +1892,45 @@
         />
 
     <TextView
-        android:id="@+id/textW4"
+        android:id="@+id/textI5"
         android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="W4"
+        android:text="I5"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/butW4"
-        app:layout_constraintStart_toEndOf="@+id/butW4"
-        app:layout_constraintTop_toTopOf="@+id/butW4"
+        app:layout_constraintBottom_toBottomOf="@+id/butI5"
+        app:layout_constraintStart_toEndOf="@+id/butI5"
+        app:layout_constraintTop_toTopOf="@+id/butI5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textI6"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="I6"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/butI6"
+        app:layout_constraintStart_toEndOf="@+id/butI6"
+        app:layout_constraintTop_toTopOf="@+id/butI6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textI7"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="I7"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/butI7"
+        app:layout_constraintStart_toEndOf="@+id/butI7"
+        app:layout_constraintTop_toTopOf="@+id/butI7"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
