@@ -190,9 +190,9 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelI2 = "Cornet d'amour";
     public String labelI3 = "Maxi vanille";
     public String labelI4 = "Satelite";
-    public String labelI5 = "Sub Vanille";
-    public String labelI6 = "Sub Chocol.";
-    public String labelI7 = "Sub aardbei";
+    public String labelI5 = "Pot Vanille";
+    public String labelI6 = "Pot Chocol.";
+    public String labelI7 = "Pot aardbei";
     public String labelF1 = "Coca-Cola";
     public String labelF2 = "Cola zero";
     public String labelF3 = "Ice - Tea";
@@ -1845,9 +1845,9 @@ public class PointOfSale extends AppCompatActivity  {
         priceI2 = BigDecimal.valueOf(2.00); // i Cornet
         priceI3 = BigDecimal.valueOf(1.20); // i maxi vanille
         priceI4 = BigDecimal.valueOf(1.00); // i Satelite
-        priceI5 = BigDecimal.valueOf(1.80); // i Sumimba Vanille
-        priceI6 = BigDecimal.valueOf(1.80); // i Sumimba Chocolade
-        priceI7 = BigDecimal.valueOf(1.80); // i Sumimba Aardbei
+        priceI5 = BigDecimal.valueOf(1.70); // i Potje Vanille
+        priceI6 = BigDecimal.valueOf(1.70); // i Potje Chocolade
+        priceI7 = BigDecimal.valueOf(1.70); // i Potje Aardbei
         priceK1 = BigDecimal.valueOf(1.80); // k Expresso
         priceK2 = BigDecimal.valueOf(2.00); // k Expresso Melk
         priceK3 = BigDecimal.valueOf(2.00); // k Lungo

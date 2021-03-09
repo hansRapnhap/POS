@@ -56,9 +56,9 @@ public class SaveRequest {
                 "Maxi vanille" + "," +
                 "Satelite" + "," +
                 //SUBIMBA
-                "Subimba Van" + "," +
-                "Subimba Choc" + "," +
-                "Subimba Aard" + "," +
+                "Potje Vanille" + "," +
+                "Potje Chocol." + "," +
+                "Potje Aardbei" + "," +
                 "Coca-Cola" + "," +
                 "Cola zero" + "," +
                 "Ice - Tea" + "," +
