@@ -1,5 +1,8 @@
 package be.rapnhap.pos;
 
+import android.content.Context;
+import android.view.View;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -7,7 +10,8 @@ import java.util.Calendar;
 
 public class SaveRequest {
 
-    public SaveRequest() {
+    //save the context recievied via constructor in a local variable
+    public SaveRequest(){
     }
 
     public static void saveData(String data) {
@@ -21,9 +25,25 @@ public class SaveRequest {
         //-----------------------------------------------------------
         try {
             // /storage/6463-3031/Android/data/be.rapnhap.myfirstapp/files/external/ SUCCEEDS !
-            File pathHandle = new File("/storage/6463-3031/Android/data/be.rapnhap.pos/files/external/");
 
+            // OLD TABLET - hard coded
+            // File pathHandle = new File("/storage/6463-3031/Android/data/be.rapnhap.pos/files/external/");
+            // File fileHandle = new File(pathHandle, fileName);
+
+            // NEW TABLET  todo  MAKE VARIABLE
+            // NEW TABLET - needed in SaveRequest
+            /*
+            File[] pathHandle = new File[1];
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            pathHandle = context.getExternalFilesDirs("external");
+            }
+            File fileHandle = new File(pathHandle[1], fileName);
+            */
+            // NEW TABLET - hard coded
+            //                                    /storage/3866-6163/Android/data/be.rapnhap.pos/files/external/20210410 my-file-name4.txt
+            File pathHandle = new File("/storage/3866-6163/Android/data/be.rapnhap.pos/files/external/");
             File fileHandle = new File(pathHandle, fileName);
+
 
             fileExists = fileHandle.exists();
 
