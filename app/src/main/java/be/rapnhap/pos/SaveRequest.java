@@ -46,7 +46,7 @@ public class SaveRequest {
             //File pathHandle = new File("/storage/3866-6163/Android/data/be.rapnhap.pos/files/external/");
             //File fileHandle = new File(pathHandle, fileName);
 
-            // get SD gard folder from context in Main (PointOfSale.java - pathHandle)
+            // get SD card folder from context in Main (PointOfSale.java - pathHandle)
             // -----------------------------------------------------------------------
             File fileHandle = new File(pathHandle, fileName);
             //  Value in Virtual device: /storage/1917-1906/Android/data/be.rapnhap.pos/files/external/20210411_POS.txt

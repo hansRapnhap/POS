@@ -5,21 +5,14 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Set;
@@ -47,49 +40,49 @@ public class PrintBluetooth extends AppCompatActivity {
     public PrintBluetooth() {
     }
 
-    void sendToPrinter(String sequence, String line) {
+    void sendToPrinter(String sequence, String line, File pathHandle) {
         // open bluetooth connection
         try
         {
-            findBT();
-            openBT();
+            findBT(pathHandle);
+            openBT(pathHandle);
         }
         catch (IOException e)
         {
             e.printStackTrace();
             Log.d(TAG_LOG_EX,"findBT / openBT: " + e);
-            LogPos.logToFile("findBT / openBT: " + e);
+            LogPos.logToFile(pathHandle, "findBT / openBT: " + e);
         }
 
         // send data to be printed
         try {
-            sendData(sequence, line);
+            sendData(pathHandle, sequence, line);
         } catch (IOException ex) {
             ex.printStackTrace();
             Log.d(TAG_LOG_EX,"sendData: " + ex);
-            LogPos.logToFile("sendData: " + ex);
+            LogPos.logToFile(pathHandle, "sendData: " + ex);
         }
 
         // close bluetooth connection
         try {
             TimeUnit.SECONDS.sleep(1);
-            closeBT();
+            closeBT(pathHandle);
         } catch (IOException | InterruptedException ex) {
             ex.printStackTrace();
             Log.d(TAG_LOG_EX,"closeBT: " + ex);
-            LogPos.logToFile("closeBT: " + ex);
+            LogPos.logToFile(pathHandle, "closeBT: " + ex);
         }
     }
 
     // this will find a bluetooth printer device
-    void findBT() {
+    void findBT(File pathHandle) {
 
         try {
             mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
             if(mBluetoothAdapter == null) {
                 Log.d(TAG_LOG_BT,"No bluetooth adapter available");
-                LogPos.logToFile("No bluetooth adapter available");
+                LogPos.logToFile(pathHandle, "No bluetooth adapter available");
             }
 
             if(!mBluetoothAdapter.isEnabled()) {
@@ -114,17 +107,17 @@ public class PrintBluetooth extends AppCompatActivity {
 
             // Log
             Log.d(TAG_LOG_BT,"Bluetooth device found.");
-            LogPos.logToFile("Bluetooth device found.");
+            LogPos.logToFile(pathHandle, "Bluetooth device found.");
 
         }catch(Exception e){
             e.printStackTrace();
             Log.d(TAG_LOG_EX,"Search BT device: " + e);
-            LogPos.logToFile("Search BT device: " + e);
+            LogPos.logToFile(pathHandle, "Search BT device: " + e);
         }
     }
 
     // tries to open a connection to the bluetooth printer device
-    void openBT() throws IOException {
+    void openBT(File pathHandle) throws IOException {
 
         // loop at exception (added to avoid error at open exception)
         boolean retry = true;
@@ -136,39 +129,39 @@ public class PrintBluetooth extends AppCompatActivity {
                     retry = false;
                 }
                 Log.d(TAG_LOG_BT, "Bluetooth Open try");
-                LogPos.logToFile("Bluetooth Open try");
+                LogPos.logToFile(pathHandle, "Bluetooth Open try");
 
                 // Standard SerialPortService ID
                 UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
 
                 Log.d(TAG_LOG_BT, "Bluetooth Open - createRfcommSocketToServiceRecord");
-                LogPos.logToFile("Bluetooth Open - createRfcommSocketToServiceRecord");
+                LogPos.logToFile(pathHandle, "Bluetooth Open - createRfcommSocketToServiceRecord");
                 mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
 
                 Log.d(TAG_LOG_BT, "Bluetooth Open - connect");
-                LogPos.logToFile("Bluetooth Open  - connect");
+                LogPos.logToFile(pathHandle, "Bluetooth Open  - connect");
                 mmSocket.connect();
 
                 Log.d(TAG_LOG_BT, "Bluetooth Open - getOutputStream");
-                LogPos.logToFile("Bluetooth Open - getOutputStream");
+                LogPos.logToFile(pathHandle, "Bluetooth Open - getOutputStream");
                 mmOutputStream = mmSocket.getOutputStream();
 
                 Log.d(TAG_LOG_BT, "Bluetooth Open - getInputStream");
-                LogPos.logToFile("Bluetooth Open - getInputStream");
+                LogPos.logToFile(pathHandle, "Bluetooth Open - getInputStream");
                 mmInputStream = mmSocket.getInputStream();
 
                 // TODO - nothing seems to come on this socket from the BT, can we decide not to listen ?
-                LogPos.logToFile("Bluetooth Open - beginListenForData");
-                beginListenForData();
+                LogPos.logToFile(pathHandle, "Bluetooth Open - beginListenForData");
+                beginListenForData(pathHandle);
 
-                LogPos.logToFile("Bluetooth Opened");
+                LogPos.logToFile(pathHandle, "Bluetooth Opened");
                 Log.d(TAG_LOG_BT, "Bluetooth Opened");
                 retry = false;
 
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.d(TAG_LOG_EX, "openBT processing: " + e);
-                LogPos.logToFile("Bluetooth Open - openBT processing: " + e);
+                LogPos.logToFile(pathHandle, "Bluetooth Open - openBT processing: " + e);
                 // TODO : intermittent exception : java.io.IOException: read failed, socket might closed or timeout, read ret: -1
                 // TODO: (we have put a(n endless) while retry to check in the logcat if this can solve this)
             }
@@ -178,7 +171,7 @@ public class PrintBluetooth extends AppCompatActivity {
      * after opening a connection to bluetooth printer device,
      * we have to listen and check if a data were sent to be printed.
      */
-    void beginListenForData() {
+    void beginListenForData(File pathHandle) {
         // this is the ASCII code for a newline character
         final byte delimiter = 10;
 
@@ -218,7 +211,7 @@ public class PrintBluetooth extends AppCompatActivity {
                                     readBufferPosition = 0;
 
                                     Log.d(TAG_LOG_BT,"Received from bluetooth adapter: <" + data + ">");
-                                    LogPos.logToFile("Received from bluetooth adapter: <" + data + ">");
+                                    LogPos.logToFile(pathHandle, "Received from bluetooth adapter: <" + data + ">");
                                     // tell the user data were sent to bluetooth printer device
                                     /*
                                     handler.post(new Runnable() {
@@ -238,7 +231,7 @@ public class PrintBluetooth extends AppCompatActivity {
                     } catch (IOException ex) {
                         stopWorker = true;
                         Log.d(TAG_LOG_EX,"Listener processing - thread interrupted: " + ex);
-                        LogPos.logToFile("Listener processing - thread interrupted: " + ex);
+                        LogPos.logToFile(pathHandle, "Listener processing - thread interrupted: " + ex);
                     }
 
                 }
@@ -250,12 +243,12 @@ public class PrintBluetooth extends AppCompatActivity {
     }
 
     // this will send text data to be printed by the bluetooth printer
-    void sendData(String sequence, String line) throws IOException {
+    void sendData(File pathHandle, String sequence, String line) throws IOException {
         try {
 
             // tell the user data were sent
             Log.d(TAG_LOG_BT,"Data to BT - START");
-            LogPos.logToFile("Data to BT - START");
+            LogPos.logToFile(pathHandle, "Data to BT - START");
             // initialize printer
             //mmOutputStream.write(27); // ESC
             //mmOutputStream.write('@');
@@ -306,28 +299,28 @@ public class PrintBluetooth extends AppCompatActivity {
 
             // tell the user data were sent
             Log.d(TAG_LOG_BT,"Data to BT - END");
-            LogPos.logToFile("Data to BT - END");
+            LogPos.logToFile(pathHandle, "Data to BT - END");
 
         } catch (Exception e) {
             e.printStackTrace();
             Log.d(TAG_LOG_EX,"sendData processing: " + e);
-            LogPos.logToFile("sendData processing: " + e);
+            LogPos.logToFile(pathHandle, "sendData processing: " + e);
         }
     }
 
     // close the connection to bluetooth printer.
-    void closeBT() throws IOException {
+    void closeBT(File pathHandle) throws IOException {
         try {
             stopWorker = true;
             mmOutputStream.close();
             mmInputStream.close();
             mmSocket.close();
             Log.d(TAG_LOG_BT,"Bluetooth Closed");
-            LogPos.logToFile("Bluetooth Closed");
+            LogPos.logToFile(pathHandle, "Bluetooth Closed");
         } catch (Exception e) {
             e.printStackTrace();
             Log.d(TAG_LOG_EX,"closeBT processing: " + e);
-            LogPos.logToFile("closeBT processing: " + e);
+            LogPos.logToFile(pathHandle, "closeBT processing: " + e);
         }
     }
 

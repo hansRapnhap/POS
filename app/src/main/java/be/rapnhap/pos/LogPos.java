@@ -12,7 +12,7 @@ public class LogPos {
     public LogPos() {
     }
 
-    public static void logToFile(String data) {
+    public static void logToFile(File pathHandle, String data) {
         // Write data into file
         String fileDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
         String fileName = fileDate + "_POS.log";
@@ -22,9 +22,11 @@ public class LogPos {
         // Get external file directory FOR THIS APP ...
         //-----------------------------------------------------------
         try {
-            // HARD CODED IF RUN ON TABLET
+            // HARD CODED IF RUN ON TABLET (Hans)
             // /storage/6463-3031/Android/data/be.rapnhap.myfirstapp/files/external/ SUCCEEDS !
-            File pathHandle = new File("/storage/6463-3031/Android/data/be.rapnhap.pos/files/external/");
+            //  Value in Virtual device: /storage/1917-1906/Android/data/be.rapnhap.pos/files/external/20210411_POS.txt
+            //File pathHandle = new File("/storage/6463-3031/Android/data/be.rapnhap.pos/files/external/");
+            //File pathHandle = new File("/storage/1917-1906/Android/data/be.rapnhap.pos/files/external/");
 
             File fileHandle = new File(pathHandle, fileName);
 
