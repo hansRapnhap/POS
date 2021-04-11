@@ -231,6 +231,9 @@ public class PointOfSale extends AppCompatActivity  {
 
     public boolean printBusy = true;
 
+    // used to get folder on SD card to save the csv
+    public File pathHandle;
+
     protected ProgressDialog mProgressDialog;
 
     @Override
@@ -242,6 +245,14 @@ public class PointOfSale extends AppCompatActivity  {
         int i = Integer. parseInt(seqHhmm);
         sequenceNumber = i * 10000;
         printBusy = false;
+
+        // get name of SD card folder
+        File[] externalFilesDirs = new File[1];
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            externalFilesDirs = this.getExternalFilesDirs("external");
+        }
+        pathHandle = externalFilesDirs[1];
+        // (will be used in SaveRequest)
 
         // RUN LONG PROCESS IN SEPARATE FUNCTION
         runLongProcess(this);
@@ -1394,7 +1405,7 @@ public class PointOfSale extends AppCompatActivity  {
                 // save the data (only when something is entered)
                 if (amount.doubleValue() != 0) {
                     String data = parseSaveData();
-                    SaveRequest.saveData(data);
+                    SaveRequest.saveData(data,pathHandle);
                 }
 
                 // decide print action

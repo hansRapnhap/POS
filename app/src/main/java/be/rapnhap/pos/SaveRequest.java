@@ -14,7 +14,7 @@ public class SaveRequest {
     public SaveRequest(){
     }
 
-    public static void saveData(String data) {
+    public static void saveData(String data, File pathHandle) {
         // Write data into file
         String fileDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
         String fileName = fileDate + "_POS.txt";
@@ -27,11 +27,12 @@ public class SaveRequest {
             // /storage/6463-3031/Android/data/be.rapnhap.myfirstapp/files/external/ SUCCEEDS !
 
             // OLD TABLET - hard coded
+            // -----------------------
             // File pathHandle = new File("/storage/6463-3031/Android/data/be.rapnhap.pos/files/external/");
             // File fileHandle = new File(pathHandle, fileName);
 
-            // NEW TABLET  todo  MAKE VARIABLE
-            // NEW TABLET - needed in SaveRequest
+            // Try to use getExternalFilesDirs - Context cannot be used here ...
+            // -----------------------------------------------------------------
             /*
             File[] pathHandle = new File[1];
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
@@ -40,10 +41,15 @@ public class SaveRequest {
             File fileHandle = new File(pathHandle[1], fileName);
             */
             // NEW TABLET - hard coded
+            // -----------------------
             //                                    /storage/3866-6163/Android/data/be.rapnhap.pos/files/external/20210410 my-file-name4.txt
-            File pathHandle = new File("/storage/3866-6163/Android/data/be.rapnhap.pos/files/external/");
-            File fileHandle = new File(pathHandle, fileName);
+            //File pathHandle = new File("/storage/3866-6163/Android/data/be.rapnhap.pos/files/external/");
+            //File fileHandle = new File(pathHandle, fileName);
 
+            // get SD gard folder from context in Main (PointOfSale.java - pathHandle)
+            // -----------------------------------------------------------------------
+            File fileHandle = new File(pathHandle, fileName);
+            //  Value in Virtual device: /storage/1917-1906/Android/data/be.rapnhap.pos/files/external/20210411_POS.txt
 
             fileExists = fileHandle.exists();
 
