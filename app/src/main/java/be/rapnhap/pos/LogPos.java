@@ -1,6 +1,5 @@
 package be.rapnhap.pos;
 
-import android.os.Environment;
 
 import java.io.File;
 import java.io.FileWriter;

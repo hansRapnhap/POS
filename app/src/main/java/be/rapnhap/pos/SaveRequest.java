@@ -10,7 +10,7 @@ import java.util.Calendar;
 
 public class SaveRequest {
 
-    //save the context recievied via constructor in a local variable
+    //save the context received via constructor in a local variable
     public SaveRequest(){
     }
 
@@ -77,7 +77,7 @@ public class SaveRequest {
                 "B Kokos" + "," +
                 "B choc orang" + "," +
                 "Vanille" + "," +
-                "Big Chocolate" + "," +
+                "Magnum" + "," +
                 "Cornet d'amour" + "," +
                 "Maxi vanille" + "," +
                 "Satelite" + "," +

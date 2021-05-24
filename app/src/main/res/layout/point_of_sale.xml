@@ -109,7 +109,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="2dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Chocolat"
+        android:text="Magnum"
         android:textSize="26sp"
         app:backgroundTint="@color/ijs"
         app:layout_constraintStart_toStartOf="@+id/butA8"
@@ -328,7 +328,8 @@
         android:textSize="26sp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/butminA1"

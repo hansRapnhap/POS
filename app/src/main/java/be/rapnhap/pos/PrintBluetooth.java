@@ -246,55 +246,59 @@ public class PrintBluetooth extends AppCompatActivity {
     void sendData(File pathHandle, String sequence, String line) throws IOException {
         try {
 
-            // tell the user data were sent
-            Log.d(TAG_LOG_BT,"Data to BT - START");
-            LogPos.logToFile(pathHandle, "Data to BT - START");
-            // initialize printer
-            //mmOutputStream.write(27); // ESC
-            //mmOutputStream.write('@');
-            mmOutputStream.write(PrinterCommands.INIT);
-            //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.INIT + ">");
+            // Handle No BT (in test) - 20210524
+            if (mmOutputStream != null) {
+                // tell the user data were sent
+                Log.d(TAG_LOG_BT, "Data to BT - START");
+                LogPos.logToFile(pathHandle, "Data to BT - START");
+                // initialize printer
+                //mmOutputStream.write(27); // ESC
+                //mmOutputStream.write('@');
+                mmOutputStream.write(PrinterCommands.INIT);
+                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.INIT + ">");
 
-            // print 2 times
-            // -------------------------------------------------------------------------------
-            for(int i = 0; i < 2; i++) {
+                // print 2 times
+                // -------------------------------------------------------------------------------
+                for (int i = 0; i < 2; i++) {
 
-                // print Title
-                mmOutputStream.write(PrinterCommands.FONT_DOUBLE);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_DOUBLE + ">");
-                mmOutputStream.write(PrinterCommands.FONT_BOLD_ON);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_BOLD_ON + ">");
-                String msg = "        RAP 'N HAP\n";
-                mmOutputStream.write(msg.getBytes());
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + msg + ">");
-                mmOutputStream.write(PrinterCommands.FONT_BOLD_OFF);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_BOLD_OFF + ">");
+                    // print Title
+                    mmOutputStream.write(PrinterCommands.FONT_DOUBLE);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_DOUBLE + ">");
+                    mmOutputStream.write(PrinterCommands.FONT_BOLD_ON);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_BOLD_ON + ">");
+                    String msg = "        RAP 'N HAP\n";
+                    mmOutputStream.write(msg.getBytes());
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + msg + ">");
+                    mmOutputStream.write(PrinterCommands.FONT_BOLD_OFF);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_BOLD_OFF + ">");
 
-                // print website and date / time
-                mmOutputStream.write(PrinterCommands.FONT_SINGLE);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_SINGLE + ">");
-                msg = "                www.rapnhap.be  \n";
-                mmOutputStream.write(msg.getBytes());
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + msg + ">");
-                String dataDate = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(Calendar.getInstance().getTime()) +
-                        "                 " + sequence +
-                        "\n\n";
-                mmOutputStream.write(dataDate.getBytes());
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + dataDate + ">");
+                    // print website and date / time
+                    mmOutputStream.write(PrinterCommands.FONT_SINGLE);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_SINGLE + ">");
+                    msg = "                www.rapnhap.be  \n";
+                    mmOutputStream.write(msg.getBytes());
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + msg + ">");
+                    String dataDate = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(Calendar.getInstance().getTime()) +
+                            "                 " + sequence +
+                            "\n\n";
+                    mmOutputStream.write(dataDate.getBytes());
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + dataDate + ">");
 
-                // print the lines and total (all are parsed in the String 'line')
-                mmOutputStream.write(PrinterCommands.FONT_DOUBLE);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_DOUBLE + ">");
-                mmOutputStream.write(line.getBytes());
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + line + ">");
+                    // print the lines and total (all are parsed in the String 'line')
+                    mmOutputStream.write(PrinterCommands.FONT_DOUBLE);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FONT_DOUBLE + ">");
+                    mmOutputStream.write(line.getBytes());
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + line + ">");
 
-                 // feed 3 lines
-                mmOutputStream.write(PrinterCommands.FEED_3_LINES);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FEED_3_LINES + ">");
+                    // feed 3 lines
+                    mmOutputStream.write(PrinterCommands.FEED_3_LINES);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.FEED_3_LINES + ">");
 
-                // cut paper
-                mmOutputStream.write(PrinterCommands.PAPER_CUT);
-                //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.PAPER_CUT + ">");
+                    // cut paper
+                    mmOutputStream.write(PrinterCommands.PAPER_CUT);
+                    //Log.d(TAG_LOG_BT,"Data to BT: <" + PrinterCommands.PAPER_CUT + ">");
+                }
+
             }
 
             // tell the user data were sent
@@ -312,7 +316,10 @@ public class PrintBluetooth extends AppCompatActivity {
     void closeBT(File pathHandle) throws IOException {
         try {
             stopWorker = true;
-            mmOutputStream.close();
+            // Handle No BT (in test) - 20210524
+            if (mmOutputStream != null) {
+                mmOutputStream.close();
+            }
             mmInputStream.close();
             mmSocket.close();
             Log.d(TAG_LOG_BT,"Bluetooth Closed");
