@@ -106,7 +106,7 @@ public class SaveRequest {
                 "Jupiler" + "," +
                 "Wijn - Wit" + "," +
                 "Wijn - Rood" + "," +
-                //"Wijn - Glue" + "," +
+                "Mojito" + "," +
                 "Totaal (*100)" + "," +
                 "VolgNr  \r\n";
                 writer.append(dataToPrint);

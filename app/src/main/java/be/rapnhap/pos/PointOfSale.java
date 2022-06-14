@@ -76,7 +76,7 @@ public class PointOfSale extends AppCompatActivity  {
     public int qtyW1 = 0;
     public int qtyW2 = 0;
     public int qtyW3 = 0;
-    //public int qtyW4 = 0;
+    public int qtyW4 = 0;
 
     public BigDecimal priceA1;
     public BigDecimal priceA2;
@@ -123,7 +123,7 @@ public class PointOfSale extends AppCompatActivity  {
     public BigDecimal priceW1;
     public BigDecimal priceW2;
     public BigDecimal priceW3;
-    //public BigDecimal priceW4;
+    public BigDecimal priceW4;
 
     public BigDecimal amount;
 
@@ -172,7 +172,7 @@ public class PointOfSale extends AppCompatActivity  {
     public TextView textW1;
     public TextView textW2;
     public TextView textW3;
-    //public TextView textW4;
+    public TextView textW4;
 
     public String labelA1 = "A bieslook";
     public String labelA2 = "A rozemarijn ";
@@ -219,7 +219,7 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelW1 = "Jupiler";
     public String labelW2 = "Wijn, Wit";
     public String labelW3 = "Wijn, Rood";
-    //public String labelW4 = "Gluewine";
+    public String labelW4 = "Mojito";
     public String labelD1 = "Pannacotta";
     public String labelD2 = "Chocolademousse";
 
@@ -313,7 +313,7 @@ public class PointOfSale extends AppCompatActivity  {
         textW1 = findViewById(R.id.textW1);
         textW2 = findViewById(R.id.textW2);
         textW3 = findViewById(R.id.textW3);
-        //textW4 = findViewById(R.id.textW4);
+        textW4 = findViewById(R.id.textW4);
 
         textAmount = findViewById(R.id.textAmount);
 
@@ -362,7 +362,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butW1 = (Button) findViewById(R.id.butW1);
         Button butW2 = (Button) findViewById(R.id.butW2);
         Button butW3 = (Button) findViewById(R.id.butW3);
-        //Button butW4 = (Button) findViewById(R.id.butW4);
+        Button butW4 = (Button) findViewById(R.id.butW4);
 
         Button butMinA1 = (Button) findViewById(R.id.butminA1);
         Button butMinA2 = (Button) findViewById(R.id.butminA2);
@@ -409,7 +409,7 @@ public class PointOfSale extends AppCompatActivity  {
         Button butMinW1 = (Button) findViewById(R.id.butminW1);
         Button butMinW2 = (Button) findViewById(R.id.butminW2);
         Button butMinW3 = (Button) findViewById(R.id.butminW3);
-        //Button butMinW4 = (Button) findViewById(R.id.butminW4);
+        Button butMinW4 = (Button) findViewById(R.id.butminW4);
 
         // INITIALIZE --------------------------------------------------------------------
         initializeQty();
@@ -1364,7 +1364,6 @@ public class PointOfSale extends AppCompatActivity  {
         });
 
         // W4
-        /*
         butW4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1384,7 +1383,6 @@ public class PointOfSale extends AppCompatActivity  {
                 }
             }
         });
-        */
 
         // Reset
         Button butReset = (Button) findViewById(R.id.butReset);
@@ -1717,14 +1715,12 @@ public class PointOfSale extends AppCompatActivity  {
             amountLine = BigDecimal.valueOf(qtyW3).multiply(priceW3);
             line += String.format("%5.2f", amountLine) + "\n";
         }
-        /*
         if (qtyW4 > 0) {
             line += String.format("%1$2s", qtyW4) + " ";
             line += String.format("%-15s", labelW4) + " ";
             amountLine = BigDecimal.valueOf(qtyW4).multiply(priceW4);
             line += String.format("%5.2f", amountLine) + "\n";
         }
-        */
 
         // print the total amount
         line += "                --------\n";
@@ -1792,7 +1788,7 @@ public class PointOfSale extends AppCompatActivity  {
                         String.valueOf(qtyW1) + "," +
                         String.valueOf(qtyW2) + "," +
                         String.valueOf(qtyW3) + "," +
-                        //String.valueOf(qtyW4) + "," +
+                        String.valueOf(qtyW4) + "," +
                         amountInteger100.toString() +"," +
                         String.format("%8d", sequenceNumber);
         return data;
@@ -1847,7 +1843,7 @@ public class PointOfSale extends AppCompatActivity  {
         qtyW1 = 0;
         qtyW2 = 0;
         qtyW3 = 0;
-        //qtyW4 = 0;
+        qtyW4 = 0;
 
 
         priceA1 = BigDecimal.valueOf(2.00); // a Bieslook
@@ -1895,7 +1891,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
         priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
         priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
-        //priceW4 = BigDecimal.valueOf(3.00); // w Gluewine
+        priceW4 = BigDecimal.valueOf(6.00); // w Mojito
 
         amount = BigDecimal.valueOf(0);
             }
@@ -1968,7 +1964,7 @@ public class PointOfSale extends AppCompatActivity  {
                 textW1.setText(Integer.toString(qtyW1));
                 textW2.setText(Integer.toString(qtyW2));
                 textW3.setText(Integer.toString(qtyW3));
-                //textW4.setText(Integer.toString(qtyW4));
+                textW4.setText(Integer.toString(qtyW4));
                 if (qtyA1 > 0) {
                     textA1.setBackgroundColor(textA1.getContext().getResources().getColor(R.color.grey));
                     textA1.setTextColor(textA1.getContext().getResources().getColor(R.color.white));
@@ -2292,6 +2288,13 @@ public class PointOfSale extends AppCompatActivity  {
                 } else {
                     textW3.setBackgroundColor(textW3.getContext().getResources().getColor(R.color.white));
                     textW3.setTextColor(textW3.getContext().getResources().getColor(R.color.grey));
+                }
+                if (qtyW4 > 0) {
+                    textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.grey));
+                    textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.white));
+                } else {
+                    textW4.setBackgroundColor(textW4.getContext().getResources().getColor(R.color.white));
+                    textW4.setTextColor(textW4.getContext().getResources().getColor(R.color.grey));
                 }
 
                 BigDecimal bdcurrentTotalAmount = amount.setScale(2, RoundingMode.HALF_EVEN);
