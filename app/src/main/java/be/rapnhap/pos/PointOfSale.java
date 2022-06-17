@@ -1891,7 +1891,7 @@ public class PointOfSale extends AppCompatActivity  {
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
         priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
         priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
-        priceW4 = BigDecimal.valueOf(6.00); // w Mojito
+        priceW4 = BigDecimal.valueOf(5.00); // w Mojito
 
         amount = BigDecimal.valueOf(0);
             }
