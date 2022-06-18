@@ -217,8 +217,8 @@ public class PointOfSale extends AppCompatActivity  {
     public String labelT2 = "Green tea";
     public String labelT3 = "Rozenbottel";
     public String labelW1 = "Jupiler";
-    public String labelW2 = "Wijn, Wit";
-    public String labelW3 = "Wijn, Rood";
+    public String labelW2 = "Wijn, W/Rz/R";
+    public String labelW3 = "Mocktail";
     public String labelW4 = "Mojito";
     public String labelD1 = "Pannacotta";
     public String labelD2 = "Chocolademousse";
@@ -1889,8 +1889,8 @@ public class PointOfSale extends AppCompatActivity  {
         priceF8 = BigDecimal.valueOf(1.70); // f Plat water
         priceF9 = BigDecimal.valueOf(1.70); // f Spuitwater
         priceW1 = BigDecimal.valueOf(2.00); // w Pils
-        priceW2 = BigDecimal.valueOf(2.50); // w Witte wijn
-        priceW3 = BigDecimal.valueOf(2.50); // w Rode wijn
+        priceW2 = BigDecimal.valueOf(2.50); // w Wijn W / R / Rz
+        priceW3 = BigDecimal.valueOf(2.50); // w Mocktail
         priceW4 = BigDecimal.valueOf(5.00); // w Mojito
 
         amount = BigDecimal.valueOf(0);
