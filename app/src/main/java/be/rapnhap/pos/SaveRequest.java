@@ -104,9 +104,9 @@ public class SaveRequest {
                 "Green tea" + "," +
                 "Rozenbottel" + "," +
                 "Jupiler" + "," +
-                "Wijn - Wit" + "," +
-                "Wijn - Rood" + "," +
-                "Mojito" + "," +
+                "Wijn (W/Rz/Rd)" + "," +
+                "Mocktail" + "," +   //W3
+                "Mojito" + "," +     //W4
                 "Totaal (*100)" + "," +
                 "VolgNr  \r\n";
                 writer.append(dataToPrint);
