@@ -45,6 +45,7 @@ public class PrintBluetooth extends AppCompatActivity {
         try
         {
             findBT(pathHandle);
+            // TODO : if no device found, no open and no send (and no close) !
             openBT(pathHandle);
         }
         catch (IOException e)
@@ -80,12 +81,12 @@ public class PrintBluetooth extends AppCompatActivity {
         try {
             mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-            if(mBluetoothAdapter == null) {
-                Log.d(TAG_LOG_BT,"No bluetooth adapter available");
+            if (mBluetoothAdapter == null) {
+                Log.d(TAG_LOG_BT, "No bluetooth adapter available");
                 LogPos.logToFile(pathHandle, "No bluetooth adapter available");
             }
 
-            if(!mBluetoothAdapter.isEnabled()) {
+            if (!mBluetoothAdapter.isEnabled()) {
                 Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBluetooth, 0);
             }
@@ -93,7 +94,7 @@ public class PrintBluetooth extends AppCompatActivity {
             Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 
             // found : BC:A5:8B:9E:E1:38 - 04:FE:A1:87:85:AE
-            if(pairedDevices.size() > 0) {
+            if (pairedDevices.size() > 0) {
                 for (BluetoothDevice device : pairedDevices) {
 
                     // RPP300 is the name of the bluetooth printer device
@@ -106,8 +107,13 @@ public class PrintBluetooth extends AppCompatActivity {
             }
 
             // Log
-            Log.d(TAG_LOG_BT,"Bluetooth device found.");
-            LogPos.logToFile(pathHandle, "Bluetooth device found.");
+            if (mmDevice == null) {
+                Log.d(TAG_LOG_BT, "Bluetooth device NOT found.");
+                LogPos.logToFile(pathHandle, "Bluetooth device NOT found.");
+            } else {
+                Log.d(TAG_LOG_BT, "Bluetooth device found.");
+                LogPos.logToFile(pathHandle, "Bluetooth device found.");
+            }
 
         }catch(Exception e){
             e.printStackTrace();
